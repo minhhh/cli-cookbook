@@ -1,0 +1,9 @@
+{
+    "gitbook": ">=2.0.0",
+    "title": "CLI cookbook",
+    "description": "A cookbook for using command line tools to do everyday job",
+    "language": "en",
+    "variables": {
+        "blobUrl": "https://github.com/minhhh/cli-cookbook/blob/master/"
+    }
+}
