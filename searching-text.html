@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | CLI cookbook</title>
+        <title>Searching text in files | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="A cookbook for using command line tools to do everyday job">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
         
         
@@ -29,8 +29,8 @@
         
     
     
-    <link rel="next" href="./watching-dir.html" />
     
+    <link rel="prev" href="./listing-file-and-folder-sizes.html" />
     
 
         
@@ -38,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-basepath="." data-revision="Thu Nov 05 2015 19:26:50 GMT+0700 (ICT)">
+    <div class="book" data-level="4.1" data-basepath="." data-revision="Thu Nov 05 2015 19:26:50 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -56,7 +56,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -140,7 +140,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.1" data-path="searching-text.html">
+        <li class="chapter active" data-level="4.1" data-path="searching-text.html">
             
                 
                     <a href="./searching-text.html">
@@ -266,13 +266,31 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>A cookbook for using command line tools to do everyday job.</p>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="http://dsl.org/cookbook/cookbook_toc.html" target="_blank">The Linux Cookbook</a></li>
-<li><a href="http://www.commandlinefu.com/" target="_blank">Commandline fu</a></li>
-</ul>
+                        <h1 id="searching-text-from-files">Searching text from files</h1>
+<h2 id="problem">Problem</h2>
+<p>You want to search for text in a lot of files swiftly.</p>
+<h2 id="solution">Solution</h2>
+<p>You can use <code>grep</code> or <code>egrep</code></p>
+<pre><code>    #list only file name
+    find . | xargs grep &apos;string&apos; -sl
+    find / -type f -print0 | xargs -0 grep -l &quot;test&quot;
 
+    # print text and file name
+    grep -r &quot;redeem reward&quot; /home/tom
+
+    # egrep with regular expression
+    egrep &quot;^\s+\&quot;&quot; file1
+
+    # grep excluding files
+    grep -ircl --exclude=*.{png,jpg} &quot;foo=&quot; *
+    grep -Ir --exclude=&quot;*\.svn*&quot; &quot;pattern&quot; *
+</code></pre><p>However the much better solution is to use <code>ag</code> or <code>ack</code></p>
+<pre><code>    ag -Q --smart-case --ignore=pack*.js --ignore=Code/tag \
+    --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js &quot;test&quot;
+
+    ack -Q --smart-case &quot;test&quot; --js --ignore-file=match:/packed.*\.js/ \
+    --ignore-file=is:Code/tag --ignore-dir=build --js &quot;test&quot;
+</code></pre>
                     
                     </section>
                 
@@ -282,8 +300,8 @@
         </div>
 
         
+        <a href="./listing-file-and-folder-sizes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Listing file and folder sizes"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./watching-dir.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Watching directories"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

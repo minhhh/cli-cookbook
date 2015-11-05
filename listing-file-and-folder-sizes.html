@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | CLI cookbook</title>
+        <title>Listing file and folder sizes | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="A cookbook for using command line tools to do everyday job">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
         
         
@@ -29,8 +29,10 @@
         
     
     
-    <link rel="next" href="./watching-dir.html" />
+    <link rel="next" href="./searching-text.html" />
     
+    
+    <link rel="prev" href="./watching-dir.html" />
     
 
         
@@ -38,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-basepath="." data-revision="Thu Nov 05 2015 19:26:50 GMT+0700 (ICT)">
+    <div class="book" data-level="2.1" data-basepath="." data-revision="Thu Nov 05 2015 19:26:50 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -56,7 +58,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -105,7 +107,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1" data-path="listing-file-and-folder-sizes.html">
+        <li class="chapter active" data-level="2.1" data-path="listing-file-and-folder-sizes.html">
             
                 
                     <a href="./listing-file-and-folder-sizes.html">
@@ -266,11 +268,26 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>A cookbook for using command line tools to do everyday job.</p>
-<h2 id="references">References</h2>
+                        <h1 id="listing-file-and-folder-sizes">Listing file and folder sizes</h1>
+<h2 id="problem">Problem</h2>
+<p>You want to print the sizes of all files and folders in the current folder from largest to smallest</p>
+<h2 id="solution">Solution</h2>
+<p>We simply run <code>du</code> command on each file and folder in the current folder then sort them using <code>sort</code></p>
+<pre><code>    ls -A | awk &apos;{system(&quot;du -sm \&quot;&quot;$0&quot;\&quot;&quot;)}&apos;| sort -nr | head
+</code></pre><p>To list only folders</p>
+<pre><code>    ls -Al \
+    | egrep &apos;^d&apos; \
+    | awk &apos;{printf $9; for (x=10; x &lt;= NF; x  ) {printf &quot; &quot;$x;}; print &quot;&quot;}&apos; \
+    | awk &apos;{system(&quot;du -sh \&quot;&quot;$0&quot;\&quot;&quot;)}&apos;
+</code></pre><p>To list only files</p>
+<pre><code>    ls -Al | egrep -v &apos;^d&apos; \
+    | awk &apos;{printf $9; for (x=10; x &lt;= NF; x  ){printf &quot; &quot;$x;}; print &quot;&quot;}&apos; \
+    | awk &apos;{system(&quot;du -sh \&quot;&quot;$0&quot;\&quot;&quot;)}&apos;
+</code></pre><h2 id="references">References</h2>
 <ul>
-<li><a href="http://dsl.org/cookbook/cookbook_toc.html" target="_blank">The Linux Cookbook</a></li>
-<li><a href="http://www.commandlinefu.com/" target="_blank">Commandline fu</a></li>
+<li><a href="http://groups.google.com/group/comp.unix.shell/browse_thread/thread/aebcbd0591714584/5e496ed7cfbe6eb1" target="_blank">http://groups.google.com/group/comp.unix.shell/browse_thread/thread/aebcbd0591714584/5e496ed7cfbe6eb1</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Xargs" target="_blank">http://en.wikipedia.org/wiki/Xargs</a></li>
+<li><a href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/" target="_blank">http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/</a></li>
 </ul>
 
                     
@@ -282,8 +299,10 @@
         </div>
 
         
+        <a href="./watching-dir.html" class="navigation navigation-prev " aria-label="Previous page: Watching directories"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./watching-dir.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Watching directories"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./searching-text.html" class="navigation navigation-next " aria-label="Next page: Searching text in files"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
