@@ -25,8 +25,10 @@ You can use `grep` or `egrep`
 However the much better solution is to use `ag` or `ack`
 
 ```
-    ag -Q --smart-case --ignore=pack*.js --ignore=Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js "test"
+    ag -Q --smart-case --ignore=pack*.js --ignore=Code/tag \
+    --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools --js "test"
 
-    ack -Q --smart-case "test" --js --ignore-file=match:/packed.*\.js/ --ignore-file=is:Code/tag --ignore-dir=build --ignore-dir=Code/JSON --ignore-dir=Tools
+    ack -Q --smart-case "test" --js --ignore-file=match:/packed.*\.js/ \
+    --ignore-file=is:Code/tag --ignore-dir=build --js "test"
 ```
 
