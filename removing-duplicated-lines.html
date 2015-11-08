@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | CLI cookbook</title>
+        <title>Removing duplicated lines | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="A cookbook for using command line tools to do everyday job">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
         
         
@@ -29,8 +29,8 @@
         
     
     
-    <link rel="next" href="./watching-dir.html" />
     
+    <link rel="prev" href="./searching-text.html" />
     
 
         
@@ -38,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-basepath="." data-revision="Sun Nov 08 2015 10:49:30 GMT+0700 (ICT)">
+    <div class="book" data-level="4.2" data-basepath="." data-revision="Sun Nov 08 2015 10:49:30 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -56,7 +56,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -163,7 +163,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="removing-duplicated-lines.html">
+        <li class="chapter active" data-level="4.2" data-path="removing-duplicated-lines.html">
             
                 
                     <a href="./removing-duplicated-lines.html">
@@ -289,13 +289,14 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>A cookbook for using command line tools to do everyday job.</p>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="http://dsl.org/cookbook/cookbook_toc.html" target="_blank">The Linux Cookbook</a></li>
-<li><a href="http://www.commandlinefu.com/" target="_blank">Commandline fu</a></li>
-</ul>
-
+                        <h1 id="removing-duplicated-lines">Removing duplicated lines</h1>
+<h2 id="problem">Problem</h2>
+<p>You want to remove duplicated lines in a file or from stdin.</p>
+<h2 id="solution">Solution</h2>
+<p>You can combine <code>uniq</code> and <code>sort</code> to achieve this.</p>
+<pre><code>    sort garbage.txt | uniq -u
+    cat garbage.txt | sort | uniq -u
+</code></pre>
                     
                     </section>
                 
@@ -305,8 +306,8 @@
         </div>
 
         
+        <a href="./searching-text.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Searching text in files"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./watching-dir.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Watching directories"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
