@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Removing duplicated lines | CLI cookbook</title>
+        <title>Printing a range of lines | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,8 @@
         
     
     
-    <link rel="next" href="./printing-range-lines.html" />
     
-    
-    <link rel="prev" href="./searching-text.html" />
+    <link rel="prev" href="./removing-duplicated-lines.html" />
     
 
         
@@ -40,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="4.2" data-basepath="." data-revision="Mon Nov 09 2015 14:15:31 GMT+0700 (ICT)">
+    <div class="book" data-level="4.3" data-basepath="." data-revision="Mon Nov 09 2015 14:15:31 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -165,7 +163,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.2" data-path="removing-duplicated-lines.html">
+        <li class="chapter " data-level="4.2" data-path="removing-duplicated-lines.html">
             
                 
                     <a href="./removing-duplicated-lines.html">
@@ -180,7 +178,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="printing-range-lines.html">
+        <li class="chapter active" data-level="4.3" data-path="printing-range-lines.html">
             
                 
                     <a href="./printing-range-lines.html">
@@ -306,13 +304,23 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="removing-duplicated-lines">Removing duplicated lines</h1>
+                        <h1 id="printing-a-range-of-lines">Printing a range of lines</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to remove duplicated lines in a file or from stdin.</p>
+<p>You want to print a range of lines from a file or from stdin, not the whole thing. For instance, you may want to print only the first 3 lines, or the last 5 lines, or everything except the first line, or everything except the last 2 lines.</p>
 <h2 id="solution">Solution</h2>
-<p>You can combine <code>uniq</code> and <code>sort</code> to achieve this.</p>
-<pre><code>    sort garbage.txt | uniq -u
-    cat garbage.txt | sort | uniq -u
+<p>First, we can count the number of lines in a file like this</p>
+<pre><code>    wc -l &lt;file&gt;
+    cat &lt;file&gt; | wc -l
+</code></pre><p>Print the first <code>n</code> line with <code>head</code></p>
+<pre><code>    head -n 10
+</code></pre><p>Print last <code>n</code> line with <code>tail</code></p>
+<pre><code>    tail -n 10
+</code></pre><p>Print everything except the first <code>n</code> line with <code>tail</code></p>
+<pre><code>    tail -n +7
+</code></pre><p>Print everything except the last <code>n</code> line with <code>head</code></p>
+<pre><code>    head -n -2
+</code></pre><p>Print from line <code>x</code> to line <code>y</code> with <code>sed</code></p>
+<pre><code>    sed -n &quot;1,3p&quot;
 </code></pre>
                     
                     </section>
@@ -323,10 +331,8 @@
         </div>
 
         
-        <a href="./searching-text.html" class="navigation navigation-prev " aria-label="Previous page: Searching text in files"><i class="fa fa-angle-left"></i></a>
+        <a href="./removing-duplicated-lines.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Removing duplicated lines"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="./printing-range-lines.html" class="navigation navigation-next " aria-label="Next page: Printing a range of lines"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
