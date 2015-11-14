@@ -8,6 +8,7 @@
     * [Listing file and folder sizes](listing-file-and-folder-sizes.md)
     * [Generate random file with particular size](generating-file-with-particular-size.md)
     * [Comparing 2 text files](comparing-2-text-files.md)
+    * [Printing a file](printing-a-file.md)
 * [Finding files]()
 * [Strings and text](strings-and-text.md)
     * [Searching text in files](searching-text.md)
