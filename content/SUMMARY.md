@@ -14,4 +14,4 @@
     * [Removing duplicated lines](removing-duplicated-lines.md)
     * [Printing a range of lines](printing-range-lines.md)
     * [Converting tab to space](converting-tab-to-space.md)
-
+* [Miscellaneous](miscellaneous.md)
