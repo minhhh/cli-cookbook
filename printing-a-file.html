@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Watching directories | CLI cookbook</title>
+        <title>Printing a file | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./listing-file-and-folder-sizes.html" />
+    <link rel="next" href="./strings-and-text.html" />
     
     
-    <link rel="prev" href="./index.html" />
+    <link rel="prev" href="./comparing-2-text-files.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1.1" data-basepath="." data-revision="Sat Nov 14 2015 21:43:29 GMT+0700 (ICT)">
+    <div class="book" data-level="2.4" data-basepath="." data-revision="Sat Nov 14 2015 21:43:29 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -79,7 +79,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="watching-dir.html">
+        <li class="chapter " data-level="1.1" data-path="watching-dir.html">
             
                 
                     <a href="./watching-dir.html">
@@ -152,7 +152,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="printing-a-file.html">
+        <li class="chapter active" data-level="2.4" data-path="printing-a-file.html">
             
                 
                     <a href="./printing-a-file.html">
@@ -381,18 +381,14 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="watching-a-directory-and-execute-command-on-file-change">Watching a directory and execute command on file change</h1>
+                        <h1 id="printing-a-file">Printing a file</h1>
 <h2 id="problem">Problem</h2>
-<p>Watch a file sets or directory and run a command when anything is added, changed or deleted.</p>
+<p>We want to print a file with different representation.</p>
 <h2 id="solution">Solution</h2>
-<p>Use python <a href="https://pypi.python.org/pypi/watchdog" target="_blank">watchdog</a> module, which has a command line tool called <code>watchmedo</code></p>
-<pre><code class="lang-bash">    watchmedo shell-command --recursive --command <span class="hljs-string">&apos;echo ${watch_event_type}&apos;</span> -w -W . \
-    | xargs -n <span class="hljs-number">1</span> -I {} sh -c <span class="hljs-string">&apos;if [ &quot;{}&quot; = &quot;modified&quot; ]; then clear; make unittest; fi&apos;</span>
+<p>For text file we can use various command like <code>cat</code>, <code>head</code>, <code>tail</code>, <code>more</code>, <code>less</code></p>
+<p>If we want to see file in hex format we can use <code>hexdump</code></p>
+<pre><code>    hexdump &lt;file&gt;
 </code></pre>
-<p>Alternatively, can use nodejs <a href="https://www.npmjs.com/package/onchange" target="_blank">onchange</a> module</p>
-<pre><code class="lang-bash">    onchange <span class="hljs-string">&apos;app/**/*.js&apos;</span> <span class="hljs-string">&apos;test/**/*.js&apos;</span> -- npm <span class="hljs-built_in">test</span>
-</code></pre>
-
                     
                     </section>
                 
@@ -402,10 +398,10 @@
         </div>
 
         
-        <a href="./index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="./comparing-2-text-files.html" class="navigation navigation-prev " aria-label="Previous page: Comparing 2 text files"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./listing-file-and-folder-sizes.html" class="navigation navigation-next " aria-label="Next page: Listing file and folder sizes"><i class="fa fa-angle-right"></i></a>
+        <a href="./strings-and-text.html" class="navigation navigation-next " aria-label="Next page: Strings and text"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
