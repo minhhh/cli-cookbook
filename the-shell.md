@@ -1,0 +1,1 @@
+This chapter focus on using the shell to run and/or coordinate different programs together. Even though there are many different shell, we focus on `bash`, which is the standard on most Linux systems, including MacOS.
