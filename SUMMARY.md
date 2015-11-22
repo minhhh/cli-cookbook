@@ -3,7 +3,7 @@
 [Introduction](README.md)
 
 * [The shell](the-shell.md)
-    * [running-a-list-of-commands](running-a-list-of-commands.md)
+    * [Running a list of commands](running-a-list-of-commands.md)
 * [Managing files and directories](managing-files-and-directories.md)
     * [Watching directories](watching-dir.md)
     * [Listing file and folder sizes](listing-file-and-folder-sizes.md)
