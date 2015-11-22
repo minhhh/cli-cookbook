@@ -15,4 +15,6 @@
     * [Removing duplicated lines](removing-duplicated-lines.md)
     * [Printing a range of lines](printing-range-lines.md)
     * [Converting tab to space](converting-tab-to-space.md)
+* [Finding things](finding-things.md)
+    * [Finding files based on size](finding-files-based-on-size.md)
 * [Miscellaneous](miscellaneous.md)
