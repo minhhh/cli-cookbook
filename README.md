@@ -5,7 +5,7 @@ A cookbook for using command line tools to do everyday job.
 
 **read online at**:
 
-* [https://www.gitbook.com/book/minhhh/command-line-cookbook/details](https://www.gitbook.com/book/minhhh/command-line-cookbook/details)
+* [https://minhhh.gitbooks.io/command-line-cookbook/content/](https://minhhh.gitbooks.io/command-line-cookbook/content/)
 
 **download a .pdf, .epub, or .mobi file from**:
 
