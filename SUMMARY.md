@@ -22,4 +22,5 @@
     * [Finding files based on size](finding-files-based-on-size.md)
 * [Administration](administration.md)
     * [Shutting down](shutting-down.md)
+    * [Execute a command at a specified time](execute-a-command-at-a-specified-time.md)
 * [Miscellaneous](miscellaneous.md)
