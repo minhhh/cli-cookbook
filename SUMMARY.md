@@ -11,6 +11,7 @@
     * [Printing a file](printing-a-file.md)
     * [Splitting and merging files](splitting-and-merging-files.md)
     * [Converting files to different format](converting-files-to-different-format.md)
+    * [Generating checksum](generating-checksum.md)
 * [Strings and text](strings-and-text.md)
     * [Searching text in files](searching-text.md)
     * [Removing duplicated lines](removing-duplicated-lines.md)
