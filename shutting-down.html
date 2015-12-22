@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Converting tab to space | CLI cookbook</title>
+        <title>Shutting down | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./comparing-2-text-files.html" />
+    <link rel="next" href="./execute-a-command-at-a-specified-time.html" />
     
     
-    <link rel="prev" href="./printing-range-lines.html" />
+    <link rel="prev" href="./administration.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3.4" data-basepath="." data-revision="Tue Dec 22 2015 15:49:10 GMT+0700 (ICT)">
+    <div class="book" data-level="5.1" data-basepath="." data-revision="Tue Dec 22 2015 15:49:10 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -294,7 +294,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.4" data-path="converting-tab-to-space.html">
+        <li class="chapter " data-level="3.4" data-path="converting-tab-to-space.html">
             
                 
                     <a href="./converting-tab-to-space.html">
@@ -396,7 +396,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1" data-path="shutting-down.html">
+        <li class="chapter active" data-level="5.1" data-path="shutting-down.html">
             
                 
                     <a href="./shutting-down.html">
@@ -552,13 +552,28 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="converting-tab-to-space">Converting tab to space</h1>
+                        <h1 id="shutting-down">Shutting down</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to convert tab to space</p>
+<p>You want to shutdown system, sometimes immediately, sometimes at a certain time or after a certain duration.</p>
 <h2 id="solution">Solution</h2>
-<p>You can use <code>expand</code></p>
-<pre><code>    # convert tab to 4 space in all java files
-    find . -name &apos;*.java&apos; ! -type d -exec bash -c &apos;expand -t 4 &quot;$0&quot; &gt; /tmp/e &amp;&amp; mv /tmp/e &quot;$0&quot;&apos; {} \;
+<p>Use the <code>shutdown</code> command with <code>root</code> privilege.</p>
+<p>To immediately shut down and halt the system</p>
+<pre><code>    sudo shutdown -h now
+</code></pre><p>To immediately reboot the system</p>
+<pre><code>    sudo shutdown -r now
+</code></pre><p>You can optionally send a warning message to all user with <code>-c</code> option</p>
+<pre><code>    sudo shutdown -h now &quot;The system is being shut down now!&quot;
+</code></pre><p>To shut down the system at a certain time</p>
+<pre><code>    # At 4.23 AM
+    sudo shutdown -h 4:23
+
+    # At 8.00 PM
+    sudo shutdown -h 20:00
+</code></pre><p>To shut down and halt the system after a period of time</p>
+<pre><code>    # In 5 minutes
+    sudo shutdown -h +5
+</code></pre><p>To cancel a shutdown</p>
+<pre><code>    sudo shutdown -c
 </code></pre>
                     
                     </section>
@@ -569,10 +584,10 @@
         </div>
 
         
-        <a href="./printing-range-lines.html" class="navigation navigation-prev " aria-label="Previous page: Printing a range of lines"><i class="fa fa-angle-left"></i></a>
+        <a href="./administration.html" class="navigation navigation-prev " aria-label="Previous page: Administration"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./comparing-2-text-files.html" class="navigation navigation-next " aria-label="Next page: Comparing 2 text files"><i class="fa fa-angle-right"></i></a>
+        <a href="./execute-a-command-at-a-specified-time.html" class="navigation navigation-next " aria-label="Next page: Execute a command at a specified time"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

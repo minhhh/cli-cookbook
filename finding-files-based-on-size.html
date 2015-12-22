@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Converting tab to space | CLI cookbook</title>
+        <title>Finding files based on size | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./comparing-2-text-files.html" />
+    <link rel="next" href="./administration.html" />
     
     
-    <link rel="prev" href="./printing-range-lines.html" />
+    <link rel="prev" href="./finding-things.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3.4" data-basepath="." data-revision="Tue Dec 22 2015 15:49:10 GMT+0700 (ICT)">
+    <div class="book" data-level="4.1" data-basepath="." data-revision="Tue Dec 22 2015 15:49:10 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -294,7 +294,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.4" data-path="converting-tab-to-space.html">
+        <li class="chapter " data-level="3.4" data-path="converting-tab-to-space.html">
             
                 
                     <a href="./converting-tab-to-space.html">
@@ -360,7 +360,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.1" data-path="finding-files-based-on-size.html">
+        <li class="chapter active" data-level="4.1" data-path="finding-files-based-on-size.html">
             
                 
                     <a href="./finding-files-based-on-size.html">
@@ -552,13 +552,35 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="converting-tab-to-space">Converting tab to space</h1>
+                        <h1 id="finding-files-based-on-size">Finding files based on size</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to convert tab to space</p>
+<p>You want to find the largest file or folders, maybe recursively. You also want to find files that are bigger/smaller than X bytes</p>
 <h2 id="solution">Solution</h2>
-<p>You can use <code>expand</code></p>
-<pre><code>    # convert tab to 4 space in all java files
-    find . -name &apos;*.java&apos; ! -type d -exec bash -c &apos;expand -t 4 &quot;$0&quot; &gt; /tmp/e &amp;&amp; mv /tmp/e &quot;$0&quot;&apos; {} \;
+<p>Find the largest file/folder non-recursively OR sort files and folders by size</p>
+<pre><code>    ls -A | awk &apos;{system(&quot;du -sh \&quot;&quot;$0&quot;\&quot;&quot;)}&apos;| sort -hr | head
+</code></pre><p>Find the largest file in a folder and all subfolders recursively</p>
+<pre><code>    find . -type f -print0 | xargs -0 -n 1 du -sh | sort -hr | head
+
+    # display in block of 1024-byte
+    find . -type f -print0 | xargs -0 -n 1 du -sk | sort -nr | head
+</code></pre><p>This command use <code>find</code> to search for all file recursively. The option <code>-print0</code> removes the need for <code>sed</code> to escape spaces since all fields now are separated by null character. <code>args -0</code> makes sure we use null separator.</p>
+<p>To find files smaller/larger than X bytes we will also use <code>find</code> command with the <code>-size</code> option</p>
+<pre><code>    // find files larger than 4096 bytes
+    find . -type f -size +4096c
+
+    // find files smaller than 1M
+    find . -type f -size -1M
+</code></pre><p>Options for the <code>-size</code> switch</p>
+<pre><code>    -size n[ckMGTP]
+        True if the file&apos;s size, rounded up, in 512-byte blocks is n.  If n is followed by a c, then the primary is true if the
+        file&apos;s size is n bytes (characters).  Similarly if n is followed by a scale indicator then the file&apos;s size is compared to n
+        scaled as:
+
+        k       kilobytes (1024 bytes)
+        M       megabytes (1024 kilobytes)
+        G       gigabytes (1024 megabytes)
+        T       terabytes (1024 gigabytes)
+        P       petabytes (1024 terabytes)
 </code></pre>
                     
                     </section>
@@ -569,10 +591,10 @@
         </div>
 
         
-        <a href="./printing-range-lines.html" class="navigation navigation-prev " aria-label="Previous page: Printing a range of lines"><i class="fa fa-angle-left"></i></a>
+        <a href="./finding-things.html" class="navigation navigation-prev " aria-label="Previous page: Finding things"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./comparing-2-text-files.html" class="navigation navigation-next " aria-label="Next page: Comparing 2 text files"><i class="fa fa-angle-right"></i></a>
+        <a href="./administration.html" class="navigation navigation-next " aria-label="Next page: Administration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

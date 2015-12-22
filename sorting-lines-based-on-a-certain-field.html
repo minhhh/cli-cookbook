@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Converting tab to space | CLI cookbook</title>
+        <title>Sorting lines based on a certain field | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./comparing-2-text-files.html" />
+    <link rel="next" href="./finding-things.html" />
     
     
-    <link rel="prev" href="./printing-range-lines.html" />
+    <link rel="prev" href="./comparing-2-text-files.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3.4" data-basepath="." data-revision="Tue Dec 22 2015 15:49:10 GMT+0700 (ICT)">
+    <div class="book" data-level="3.6" data-basepath="." data-revision="Tue Dec 22 2015 15:49:10 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -294,7 +294,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.4" data-path="converting-tab-to-space.html">
+        <li class="chapter " data-level="3.4" data-path="converting-tab-to-space.html">
             
                 
                     <a href="./converting-tab-to-space.html">
@@ -324,7 +324,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.6" data-path="sorting-lines-based-on-a-certain-field.html">
+        <li class="chapter active" data-level="3.6" data-path="sorting-lines-based-on-a-certain-field.html">
             
                 
                     <a href="./sorting-lines-based-on-a-certain-field.html">
@@ -552,13 +552,20 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="converting-tab-to-space">Converting tab to space</h1>
+                        <h1 id="sorting-lines-based-on-a-certain-field">Sorting lines based on a certain field</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to convert tab to space</p>
+<p>You want to sort a list of lines from a file or from stdin based on a certain field, provided all the lines follow the same format.</p>
 <h2 id="solution">Solution</h2>
-<p>You can use <code>expand</code></p>
-<pre><code>    # convert tab to 4 space in all java files
-    find . -name &apos;*.java&apos; ! -type d -exec bash -c &apos;expand -t 4 &quot;$0&quot; &gt; /tmp/e &amp;&amp; mv /tmp/e &quot;$0&quot;&apos; {} \;
+<p>First, you can sort the whole line with <code>sort</code>. For instance, you can sort lines in <code>/etc/password</code>, which will sort by the username since the username is the first field in each line.</p>
+<pre><code>    # sort password file by username
+    sort /etc/passwd
+</code></pre><p>However, most of the time we want to sort the file based on a field in the middle, and/or some complex formula of the fields, for instance, the ratio between field 2 and field 3. In such cases, we will use <code>awk</code> to calculate the derived field then use <code>sort</code> on the final result</p>
+<pre><code>    # sort based on field 2 / field 1 then print the result at the beginning of the line
+    cat somefile.txt | awk &apos;{ratio = $2/$1; print ratio, $0;}&apos; | sort -rnk1 | head
+</code></pre><p>Real world example: Counting unique ip access in apache log in a month</p>
+<pre><code>    grep Jan/2004 access.log | grep foo.php | \
+    awk &apos;{ print $1; }&apos; |  sort -n | uniq -c | \
+    sort -rn | head
 </code></pre>
                     
                     </section>
@@ -569,10 +576,10 @@
         </div>
 
         
-        <a href="./printing-range-lines.html" class="navigation navigation-prev " aria-label="Previous page: Printing a range of lines"><i class="fa fa-angle-left"></i></a>
+        <a href="./comparing-2-text-files.html" class="navigation navigation-prev " aria-label="Previous page: Comparing 2 text files"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./comparing-2-text-files.html" class="navigation navigation-next " aria-label="Next page: Comparing 2 text files"><i class="fa fa-angle-right"></i></a>
+        <a href="./finding-things.html" class="navigation navigation-next " aria-label="Next page: Finding things"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
