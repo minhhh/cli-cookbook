@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "git clean -df && gitbook build . ./gh-pages",
     "serve": "npm run generate && cd gh-pages && python -m SimpleHTTPServer",
-    "deploy": "npm run generate && gh-pages -d gh-pages -b gh-pages && git clean -df"
+    "deploy": "npm run generate && gh-pages -d gh-pages -b gh-pages && git clean -df && git push"
   },
   "repository": {
     "type": "git",
