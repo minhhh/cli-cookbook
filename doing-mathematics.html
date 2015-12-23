@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Finding things | CLI cookbook</title>
+        <title>Doing mathematics | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,8 @@
         
     
     
-    <link rel="next" href="./finding-files-based-on-size.html" />
     
-    
-    <link rel="prev" href="./sorting-lines-based-on-a-certain-field.html" />
+    <link rel="prev" href="./miscellaneous.html" />
     
 
         
@@ -40,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="4" data-basepath="." data-revision="Wed Dec 23 2015 17:22:54 GMT+0700 (ICT)">
+    <div class="book" data-level="6.1" data-basepath="." data-revision="Wed Dec 23 2015 17:22:54 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -344,7 +342,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="4" data-path="finding-things.html">
+        <li class="chapter " data-level="4" data-path="finding-things.html">
             
                 
                     <a href="./finding-things.html">
@@ -447,7 +445,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="6.1" data-path="doing-mathematics.html">
+        <li class="chapter active" data-level="6.1" data-path="doing-mathematics.html">
             
                 
                     <a href="./doing-mathematics.html">
@@ -573,8 +571,17 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>This chapter focuses on finding things in the file system.</p>
+                        <h1 id="doing-mathematics">Doing mathematics</h1>
+<h2 id="problem">Problem</h2>
+<p>We want to do simple mathematics</p>
+<h2 id="solution">Solution</h2>
+<p>Use <code>bc</code> command</p>
+<pre><code>    echo &quot;5.1 * 2&quot; | bc - l
+    &gt; 10.2
 
+    echo &quot;scale=10; 1/2&quot; | bc -l
+    &gt; .5000000000
+</code></pre>
                     
                     </section>
                 
@@ -584,10 +591,8 @@
         </div>
 
         
-        <a href="./sorting-lines-based-on-a-certain-field.html" class="navigation navigation-prev " aria-label="Previous page: Sorting lines based on a certain field"><i class="fa fa-angle-left"></i></a>
+        <a href="./miscellaneous.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Miscellaneous"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="./finding-files-based-on-size.html" class="navigation navigation-next " aria-label="Next page: Finding files based on size"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
