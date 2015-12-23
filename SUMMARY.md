@@ -25,3 +25,4 @@
     * [Shutting down](shutting-down.md)
     * [Execute a command at a specified time](execute-a-command-at-a-specified-time.md)
 * [Miscellaneous](miscellaneous.md)
+    * [Doing mathematics](doing-mathematics.md)
