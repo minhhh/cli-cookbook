@@ -1,4 +1,4 @@
-# Printing a file
+# Printing a file in text or hex
 
 ## Problem
 We want to print a file with different representation. We also want to print various information related to the file.
@@ -16,20 +16,4 @@ To print information about the file such as file type we can use `file` command
 
 ```
     file <file>
-```
-
-To count the number of characters or lines, we use `wc`
-
-```
-    # this shows number of line, words, character respectively
-    wc <file>
-
-    # show number of lines
-    wc -l <file>
-
-    # show number of words
-    wc -w <file>
-
-    # show number of characters
-    wc -c <file>
 ```
