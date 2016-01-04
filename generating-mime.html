@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Execute a command at a specified time | CLI cookbook</title>
+        <title>Generating mime | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./miscellaneous.html" />
+    <link rel="next" href="./strings-and-text.html" />
     
     
-    <link rel="prev" href="./shutting-down.html" />
+    <link rel="prev" href="./generating-checksum.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="5.2" data-basepath="." data-revision="Mon Jan 04 2016 16:08:19 GMT+0700 (ICT)">
+    <div class="book" data-level="2.8" data-basepath="." data-revision="Mon Jan 04 2016 16:08:19 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -228,7 +228,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.8" data-path="generating-mime.html">
+        <li class="chapter active" data-level="2.8" data-path="generating-mime.html">
             
                 
                     <a href="./generating-mime.html">
@@ -456,7 +456,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.2" data-path="execute-a-command-at-a-specified-time.html">
+        <li class="chapter " data-level="5.2" data-path="execute-a-command-at-a-specified-time.html">
             
                 
                     <a href="./execute-a-command-at-a-specified-time.html">
@@ -618,44 +618,14 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="execute-a-command-at-a-specified-time">Execute a command at a specified time</h1>
+                        <h1 id="generating-mime">Generating mime</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to run a command at a specified time, or at a certain amount of time from now.</p>
+<p>You want to encode and decode <a href="https://en.wikipedia.org/wiki/MIME" target="_blank">MIME</a> format.</p>
 <h2 id="solution">Solution</h2>
-<p>Use <code>at</code> command to run arbitrary commands and scripts at a specified time.</p>
-<p>There are 2 ways to run <code>at</code>: from user input or from a script</p>
-<p>To run from user input</p>
-<pre><code>    at &lt;time&gt;
-    ...type in the commands
-    Ctrl-D
-</code></pre><p>To run from a script</p>
-<pre><code>    at &lt;time&gt; -f &lt;script&gt;
-</code></pre><p>To run a command immediately</p>
-<pre><code>    at now
-</code></pre><p>To run a command at a specific time in the future</p>
-<pre><code>    # run this job at 10:00 Jan 10, 2015
-    at 10:00 Jan 10 2015
-
-    # run this job at midnight, noon, or teatime, respectively
-    at midnight
-    at noon
-    at teatime
-
-    # run this job at noon today or tomorrow
-    at noon today
-    at noon tomorrow
-</code></pre><p>To run a command after an amount of time has elapsed from now, just add <code>+</code> to the time</p>
-<pre><code>    # run this job after 3 minutes
-    at now + 3 minutes
-
-    # run this job at 4pm 3 days from now
-    at 4pm + 3 days
-</code></pre><p>To list current jobs, use <code>atq</code></p>
-<pre><code>    atq
-</code></pre><p>To remove a job listed by <code>atq</code>, use <code>atrm</code></p>
-<pre><code>    atrm 10
-</code></pre><p><code>batch</code> is similar to <code>at</code>, but it only executes command when system load levels permit, i.e., when the load average drops below 1.5.</p>
-
+<p>You can use <code>mimencode</code> and <code>mmdecode</code></p>
+<pre><code>    mimencode &lt;file&gt;
+    mmdecode &lt;file&gt;
+</code></pre>
                     
                     </section>
                 
@@ -665,10 +635,10 @@
         </div>
 
         
-        <a href="./shutting-down.html" class="navigation navigation-prev " aria-label="Previous page: Shutting down"><i class="fa fa-angle-left"></i></a>
+        <a href="./generating-checksum.html" class="navigation navigation-prev " aria-label="Previous page: Generating checksum"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./miscellaneous.html" class="navigation navigation-next " aria-label="Next page: Miscellaneous"><i class="fa fa-angle-right"></i></a>
+        <a href="./strings-and-text.html" class="navigation navigation-next " aria-label="Next page: Strings and text"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
