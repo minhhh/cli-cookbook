@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Printing a file | CLI cookbook</title>
+        <title>Converting date and time | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./splitting-and-merging-files.html" />
+    <link rel="next" href="./managing-files-and-directories.html" />
     
     
-    <link rel="prev" href="./generating-file-with-particular-size.html" />
+    <link rel="prev" href="./running-a-list-of-commands.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.4" data-basepath="." data-revision="Mon Jan 04 2016 16:08:19 GMT+0700 (ICT)">
+    <div class="book" data-level="1.2" data-basepath="." data-revision="Wed Jan 06 2016 13:26:25 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -97,6 +97,21 @@
                             <b>1.1.</b>
                         
                         Running a list of commands
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="converting-date-and-time.html">
+            
+                
+                    <a href="./converting-date-and-time.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Converting date and time
                     </a>
             
             
@@ -168,17 +183,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="printing-a-file.html">
+        <li class="chapter " data-level="2.4" data-path="printing-a-file-in-text-or-hex.html">
             
-                
-                    <a href="./printing-a-file.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.</b>
-                        
-                        Printing a file
-                    </a>
+            <span><b>2.4.</b> Printing a file in text or hex</span>
             
             
         </li>
@@ -238,6 +245,21 @@
                             <b>2.8.</b>
                         
                         Generating mime
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="counting-number-of-lines-or-characters.html">
+            
+                
+                    <a href="./counting-number-of-lines-or-characters.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        Counting number of lines or characters
                     </a>
             
             
@@ -618,27 +640,22 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="printing-a-file">Printing a file</h1>
+                        <h1 id="converting-date-and-time">Converting date and time</h1>
 <h2 id="problem">Problem</h2>
-<p>We want to print a file with different representation. We also want to print various information related to the file.</p>
+<p>We want to quickly convert standard date time format to POSIX time and vice versa.</p>
 <h2 id="solution">Solution</h2>
-<p>For text file we can use various command like <code>cat</code>, <code>head</code>, <code>tail</code>, <code>more</code>, <code>less</code></p>
-<p>If we want to see file in hex format we can use <code>hexdump</code></p>
-<pre><code>    hexdump &lt;file&gt;
-</code></pre><p>To print information about the file such as file type we can use <code>file</code> command</p>
-<pre><code>    file &lt;file&gt;
-</code></pre><p>To count the number of characters or lines, we use <code>wc</code></p>
-<pre><code>    # this shows number of line, words, character respectively
-    wc &lt;file&gt;
+<p>The standard <code>date</code> can do this easily</p>
+<p>Convert from date to POSIX</p>
+<pre><code>    date -d &quot;17 June 2015 15:00:00&quot; +%s
+    &gt; 1434520800
 
-    # show number of lines
-    wc -l &lt;file&gt;
-
-    # show number of words
-    wc -w &lt;file&gt;
-
-    # show number of characters
-    wc -c &lt;file&gt;
+    # get current date in POSIX
+    date +%s
+</code></pre><p>Convert from POSIX to date</p>
+<pre><code>    date -d @1232144092
+    &gt; Sat Jan 17 07:14:52 JST 2009
+</code></pre><p>By the way to set the current date</p>
+<pre><code>    date --set &quot;25 July 2014 15:00:00&quot;
 </code></pre>
                     
                     </section>
@@ -649,10 +666,10 @@
         </div>
 
         
-        <a href="./generating-file-with-particular-size.html" class="navigation navigation-prev " aria-label="Previous page: Generate random file with particular size"><i class="fa fa-angle-left"></i></a>
+        <a href="./running-a-list-of-commands.html" class="navigation navigation-prev " aria-label="Previous page: Running a list of commands"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./splitting-and-merging-files.html" class="navigation navigation-next " aria-label="Next page: Splitting and merging files"><i class="fa fa-angle-right"></i></a>
+        <a href="./managing-files-and-directories.html" class="navigation navigation-next " aria-label="Next page: Managing files and directories"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

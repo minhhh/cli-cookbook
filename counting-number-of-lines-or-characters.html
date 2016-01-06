@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Converting tab to space | CLI cookbook</title>
+        <title>Counting number of lines or characters | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./comparing-2-text-files.html" />
+    <link rel="next" href="./strings-and-text.html" />
     
     
-    <link rel="prev" href="./printing-range-lines.html" />
+    <link rel="prev" href="./generating-mime.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3.4" data-basepath="." data-revision="Wed Jan 06 2016 13:26:25 GMT+0700 (ICT)">
+    <div class="book" data-level="2.9" data-basepath="." data-revision="Wed Jan 06 2016 13:26:25 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -250,7 +250,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.9" data-path="counting-number-of-lines-or-characters.html">
+        <li class="chapter active" data-level="2.9" data-path="counting-number-of-lines-or-characters.html">
             
                 
                     <a href="./counting-number-of-lines-or-characters.html">
@@ -331,7 +331,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.4" data-path="converting-tab-to-space.html">
+        <li class="chapter " data-level="3.4" data-path="converting-tab-to-space.html">
             
                 
                     <a href="./converting-tab-to-space.html">
@@ -640,13 +640,22 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="converting-tab-to-space">Converting tab to space</h1>
+                        <h1 id="counting-number-of-lines-or-characters">Counting number of lines or characters</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to convert tab to space</p>
+<p>We want to count the number of lines, characters or words in a file</p>
 <h2 id="solution">Solution</h2>
-<p>You can use <code>expand</code></p>
-<pre><code>    # convert tab to 4 space in all java files
-    find . -name &apos;*.java&apos; ! -type d -exec bash -c &apos;expand -t 4 &quot;$0&quot; &gt; /tmp/e &amp;&amp; mv /tmp/e &quot;$0&quot;&apos; {} \;
+<p>To count the number of characters, words or lines, we use <code>wc</code></p>
+<pre><code>    # this shows number of line, words, character respectively
+    wc &lt;file&gt;
+
+    # show number of lines
+    wc -l &lt;file&gt;
+
+    # show number of words
+    wc -w &lt;file&gt;
+
+    # show number of characters
+    wc -c &lt;file&gt;
 </code></pre>
                     
                     </section>
@@ -657,10 +666,10 @@
         </div>
 
         
-        <a href="./printing-range-lines.html" class="navigation navigation-prev " aria-label="Previous page: Printing a range of lines"><i class="fa fa-angle-left"></i></a>
+        <a href="./generating-mime.html" class="navigation navigation-prev " aria-label="Previous page: Generating mime"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./comparing-2-text-files.html" class="navigation navigation-next " aria-label="Next page: Comparing 2 text files"><i class="fa fa-angle-right"></i></a>
+        <a href="./strings-and-text.html" class="navigation navigation-next " aria-label="Next page: Strings and text"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
