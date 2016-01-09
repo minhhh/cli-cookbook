@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Generating checksum | CLI cookbook</title>
+        <title>Pausing execution | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./generating-mime.html" />
+    <link rel="next" href="./miscellaneous.html" />
     
     
-    <link rel="prev" href="./converting-files-to-different-format.html" />
+    <link rel="prev" href="./execute-a-command-at-a-specified-time.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.7" data-basepath="." data-revision="Sat Jan 09 2016 15:10:52 GMT+0700 (ICT)">
+    <div class="book" data-level="5.3" data-basepath="." data-revision="Sat Jan 09 2016 15:10:52 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -220,7 +220,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.7" data-path="generating-checksum.html">
+        <li class="chapter " data-level="2.7" data-path="generating-checksum.html">
             
                 
                     <a href="./generating-checksum.html">
@@ -493,7 +493,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="pausing-execution.html">
+        <li class="chapter active" data-level="5.3" data-path="pausing-execution.html">
             
                 
                     <a href="./pausing-execution.html">
@@ -655,14 +655,16 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="generating-checksum">Generating checksum</h1>
+                        <h1 id="pausing-execution">Pausing execution</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to generate different type of checksum for a file</p>
+<p>You want to pause/sleep for some seconds on the command line.</p>
 <h2 id="solution">Solution</h2>
-<p>You can use various checksum tool</p>
-<pre><code>    cksum &lt;file&gt;
-    md5 &lt;file&gt;
-    shasum &lt;file&gt;
+<p>You can use <code>sleep</code> and <code>usleep</code></p>
+<pre><code>    # sleep for 1 second
+    sleep 1
+
+    # sleep for 1000 milliseconds
+    usleep 1000
 </code></pre>
                     
                     </section>
@@ -673,10 +675,10 @@
         </div>
 
         
-        <a href="./converting-files-to-different-format.html" class="navigation navigation-prev " aria-label="Previous page: Converting files to different format"><i class="fa fa-angle-left"></i></a>
+        <a href="./execute-a-command-at-a-specified-time.html" class="navigation navigation-prev " aria-label="Previous page: Execute a command at a specified time"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./generating-mime.html" class="navigation navigation-next " aria-label="Next page: Generating mime"><i class="fa fa-angle-right"></i></a>
+        <a href="./miscellaneous.html" class="navigation navigation-next " aria-label="Next page: Miscellaneous"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
