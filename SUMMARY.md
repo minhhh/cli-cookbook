@@ -29,5 +29,6 @@
 * [Administration](administration.md)
     * [Shutting down](shutting-down.md)
     * [Execute a command at a specified time](execute-a-command-at-a-specified-time.md)
+    * [Pausing execution](pausing-execution.md)
 * [Miscellaneous](miscellaneous.md)
     * [Doing mathematics](doing-mathematics.md)

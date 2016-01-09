@@ -8,7 +8,7 @@ Use `split` to split file easily
 
 ```
     # Default split will create xaa, xab, etc files
-    split <file>
+    split <FILE>
     > xaa
     > xab
     > xac
