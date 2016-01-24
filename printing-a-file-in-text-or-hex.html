@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | CLI cookbook</title>
+        <title>Printing a file in text or hex | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="A cookbook for using command line tools to do everyday job">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
         
         
@@ -29,8 +29,10 @@
         
     
     
-    <link rel="next" href="./the-shell.html" />
+    <link rel="next" href="./splitting-and-merging-files.html" />
     
+    
+    <link rel="prev" href="./generating-file-with-particular-size.html" />
     
 
         
@@ -38,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-basepath="." data-revision="Sun Jan 24 2016 18:27:54 GMT+0700 (ICT)">
+    <div class="book" data-level="2.4" data-basepath="." data-revision="Sun Jan 24 2016 18:27:54 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -56,7 +58,7 @@
 
             
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -181,7 +183,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4" data-path="printing-a-file-in-text-or-hex.html">
+        <li class="chapter active" data-level="2.4" data-path="printing-a-file-in-text-or-hex.html">
             
                 
                     <a href="./printing-a-file-in-text-or-hex.html">
@@ -661,30 +663,16 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>A cookbook for using command line tools to do everyday job.</p>
-<p>In every day job, you often encounter various types of repetitive tasks, such as renaming files, finding texts, processing texts and so on. These tasks take a lot of time doing manually using UI applications. This book aims to leverage the power of the command line tools to make your job less tedious and more enjoyable.</p>
-<p>This book presents &quot;recipes&quot; for preparing or accomplishing particular, specific tasks. Each recipes contains a &quot;Problem&quot; statement and a &quot;Solution&quot; section. The solution section will list one or several best ways to accomplish the task that the author knows of.</p>
-<p>The recipes are ordered randomly.</p>
-<p>This book is a work in progress.</p>
-<hr>
-<p><strong>read online at</strong>:</p>
-<ul>
-<li><a href="https://minhhh.gitbooks.io/command-line-cookbook/content/" target="_blank">https://minhhh.gitbooks.io/command-line-cookbook/content/</a></li>
-</ul>
-<p><strong>download a .pdf, .epub, or .mobi file from</strong>:</p>
-<ul>
-<li><a href="https://www.gitbook.com/book/minhhh/command-line-cookbook/details" target="_blank">https://www.gitbook.com/book/minhhh/command-line-cookbook/details</a></li>
-</ul>
-<p><strong>contribute content, suggestions, and fixes on github</strong>:</p>
-<ul>
-<li><a href="https://github.com/minhhh/cli-cookbook" target="_blank">https://github.com/minhhh/cli-cookbook</a></li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="http://dsl.org/cookbook/cookbook_toc.html" target="_blank">The Linux Cookbook</a></li>
-<li><a href="http://www.commandlinefu.com/" target="_blank">Commandline fu</a></li>
-</ul>
-
+                        <h1 id="printing-a-file-in-text-or-hex">Printing a file in text or hex</h1>
+<h2 id="problem">Problem</h2>
+<p>We want to print a file with different representation. We also want to print various information related to the file.</p>
+<h2 id="solution">Solution</h2>
+<p>For text file we can use various command like <code>cat</code>, <code>head</code>, <code>tail</code>, <code>more</code>, <code>less</code></p>
+<p>If we want to see file in hex format we can use <code>hexdump</code></p>
+<pre><code>    hexdump &lt;file&gt;
+</code></pre><p>To print information about the file such as file type we can use <code>file</code> command</p>
+<pre><code>    file &lt;file&gt;
+</code></pre>
                     
                     </section>
                 
@@ -694,8 +682,10 @@
         </div>
 
         
+        <a href="./generating-file-with-particular-size.html" class="navigation navigation-prev " aria-label="Previous page: Generating random file with particular size"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./the-shell.html" class="navigation navigation-next navigation-unique" aria-label="Next page: The shell"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./splitting-and-merging-files.html" class="navigation navigation-next " aria-label="Next page: Splitting and merging files"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
