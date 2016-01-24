@@ -8,7 +8,7 @@
 * [Managing files and directories](managing-files-and-directories.md)
     * [Watching directories](watching-dir.md)
     * [Listing file and folder sizes](listing-file-and-folder-sizes.md)
-    * [Generate random file with particular size](generating-file-with-particular-size.md)
+    * [Generating random file with particular size](generating-file-with-particular-size.md)
     * [Printing a file in text or hex](printing-a-file-in-text-or-hex.md)
     * [Splitting and merging files](splitting-and-merging-files.md)
     * [Converting files to different format](converting-files-to-different-format.md)

@@ -1,4 +1,4 @@
-# Generate random file with particular size
+# Generating random file with particular size
 
 ## Problem
 You want to generate a random file used for testing with a particular size.
