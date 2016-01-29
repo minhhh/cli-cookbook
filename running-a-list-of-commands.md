@@ -1,4 +1,4 @@
-# running-a-list-of-commands
+# Running a list of commands
 
 ## Problem
 You want to run a list of commands in order, sometimes in parallel. Sometimes you want to run a command only if another command succeeds or fails.
