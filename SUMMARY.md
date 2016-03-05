@@ -26,6 +26,7 @@
     * [Merging content of 2 files side by side](merging-content-of-2-files-side-by-side.md)
     * [Joining all lines in a file](joining-all-lines-in-a-file.md)
     * [Adding text to the beginning of a file](adding-text-to-the-beginning-of-a-file.md)
+    * [Replacing strings](replacing-strings.md)
 * [Finding things](finding-things.md)
     * [Finding files based on size](finding-files-based-on-size.md)
     * [Finding files in a folder](finding-files-in-a-folder.md)
