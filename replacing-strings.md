@@ -19,3 +19,10 @@ Some times the words contain single quotes, in these cases, we have to escape th
 ```
     sed 's/old-word/new'\''word/g' *.txt
 ```
+
+If you want `sed` to read from standard input, you have to use `-e` option
+
+```
+    echo "hello world" | sed -e 's/hello/hi/g'
+    > hi world
+```
