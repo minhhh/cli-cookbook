@@ -4,6 +4,8 @@ In every day job, you often encounter various types of repetitive tasks, such as
 
 This book presents "recipes" for preparing or accomplishing particular, specific tasks. Each recipes contains a "Problem" statement and a "Solution" section. The solution section will list one or several best ways to accomplish the task that the author knows of.
 
+Since I want to focus on having at least one workable solution that you can just copy and paste, not on teaching Bash by examples, there will not be a lot of detailed explanation about what each small command does. Readers are encouraged to do extensive research about commands or patterns they are interested in. By doing that, they will discover even much more usage in situations they may not think of at the moment. Doing so however will require more time which normally we don't have. This is the practical reason why I chose this approach.
+
 The recipes are ordered randomly.
 
 This book is a work in progress.
