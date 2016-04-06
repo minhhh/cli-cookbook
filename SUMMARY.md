@@ -30,6 +30,7 @@
     * [Adding text to the beginning of a file](adding-text-to-the-beginning-of-a-file.md)
     * [Replacing strings](replacing-strings.md)
 * [Finding things](finding-things.md)
+    * [Finding files based on name](finding-files-based-on-name.md)
     * [Finding files based on size](finding-files-based-on-size.md)
     * [Finding files in a folder](finding-files-in-a-folder.md)
 * [Administration](administration.md)
