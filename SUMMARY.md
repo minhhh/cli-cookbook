@@ -7,6 +7,7 @@
     * [Converting date and time](converting-date-and-time.md)
     * [Simulating user inputs](simulating-user-inputs.md)
     * [Running a command for each item in a list](running-a-command-for-each-item-in-a-list.md)
+mmand-for-each-item-in-a-list.md
 * [Managing files and directories](managing-files-and-directories.md)
     * [Watching directories](watching-dir.md)
     * [Listing file and folder sizes](listing-file-and-folder-sizes.md)
@@ -18,6 +19,7 @@
     * [Generating mime](generating-mime.md)
     * [Counting number of lines or characters](counting-number-of-lines-or-characters.md)
     * [Copying and showing progress](copying-and-showing-progress.md)
+    * [Batch renaming](batch-renaming.md)
 * [Strings and text](strings-and-text.md)
     * [Searching text in files](searching-text.md)
     * [Removing duplicated lines](removing-duplicated-lines.md)
