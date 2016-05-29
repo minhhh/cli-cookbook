@@ -6,7 +6,7 @@ This book presents "recipes" for preparing or accomplishing specific tasks. Each
 
 Since I want to focus on having at least one workable solution that you can just copy and paste, not on teaching Bash by examples, there will not be a lot of detailed explanations about what each command does. Readers are encouraged to do extensive research about particular commands or patterns they are interested in. By doing that, they will discover even much more usage in situations they may not think of at the moment. Doing so however will require more time which normally we don't have. This is the practical reason why I chose this approach.
 
-The recipes are ordered randomly.
+The recipes are ordered randomly. All commands should be applicable on most Linux distros, MacOS (some missing default command you might have to install using HomeBrew). On Windows you have to install `cygwin` or something similar. On some occasion, I use external tools from Python, Perl or Nodejs community since they're super easy to install and use just like your default Linux or GNU commands.
 
 This book is a work in progress.
 
