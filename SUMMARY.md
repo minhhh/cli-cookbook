@@ -8,6 +8,7 @@
     * [Simulating user inputs](simulating-user-inputs.md)
     * [Running a command for each item in a list](running-a-command-for-each-item-in-a-list.md)
 mmand-for-each-item-in-a-list.md
+    * [Generating random numbers](generating-random-numbers.md)
 * [Managing files and directories](managing-files-and-directories.md)
     * [Watching directories](watching-dir.md)
     * [Listing file and folder sizes](listing-file-and-folder-sizes.md)
