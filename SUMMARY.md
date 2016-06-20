@@ -33,6 +33,7 @@ mmand-for-each-item-in-a-list.md
     * [Adding text to the beginning of a file](adding-text-to-the-beginning-of-a-file.md)
     * [Replacing strings](replacing-strings.md)
     * [Changing case](changing-case.md)
+    * [Deleting lines that contain a specific string](deleting-lines-that-contain-a-specific-string.md)
 * [Finding things](finding-things.md)
     * [Finding files based on name](finding-files-based-on-name.md)
     * [Finding files based on size](finding-files-based-on-size.md)
