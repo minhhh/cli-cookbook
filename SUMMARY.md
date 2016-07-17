@@ -21,6 +21,7 @@ mmand-for-each-item-in-a-list.md
     * [Counting number of lines or characters](counting-number-of-lines-or-characters.md)
     * [Copying and showing progress](copying-and-showing-progress.md)
     * [Batch renaming](batch-renaming.md)
+    * [Counting word frequency](counting-word-frequency.md)
 * [Strings and text](strings-and-text.md)
     * [Searching text in files](searching-text.md)
     * [Removing duplicated lines](removing-duplicated-lines.md)
