@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Finding files based on name | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./finding-files-based-on-size.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./finding-things.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="4.1" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -585,7 +585,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.1" data-path="finding-files-based-on-name.html">
+        <li class="chapter active" data-level="4.1" data-path="finding-files-based-on-name.html">
             
                 
                     <a href="./finding-files-based-on-name.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,7 +843,40 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
+                        <h1 id="finding-files-based-on-name">Finding files based on name</h1>
+<h2 id="problem">Problem</h2>
+<p>You want to find files or folders in a directory by name.</p>
+<h2 id="solution">Solution</h2>
+<p>Use <code>find</code> to find files or folders in a folder by name.</p>
+<p>Find all files or folder in the current directory whose name is <code>password.txt</code>. </p>
+<pre><code>    # This command would match any files whose name consisted of the letters `password.txt&apos;, regardless of case, including &apos;password.txt&apos;, &apos;PASSWORD.TXT&apos;, and &apos;password.TXT&apos;.
+    find . -iname password.txt
+</code></pre><p>We can use some wildcard patterns to make the searching easier in case we don&apos;t know the exact names, or we just want to find all files with similar patterns.</p>
+<pre><code>    # search all files begin with `pass`
+    find . -iname &apos;pass*&apos;
+
+    # file all files with a certain extension
+    find . -iname &apos;*.png&apos;
+    find . -iname &apos;*.txt&apos;
+
+    # search all files whose name contains `pass` somewhere
+    find . -iname &apos;*pass*&apos;
+</code></pre><p>To find only file or folder we have to specify the type like so</p>
+<pre><code>    # search only files
+    find . -type f -iname &apos;win*&apos;
+
+    # search only folder
+    find . -type d -iname &apos;win*&apos;
+</code></pre><p>Running commands on the files you find.</p>
+<pre><code>    find . -name &apos;*.md&apos; -exec echo &apos;Found {}&apos; &apos;;&apos;
+    &gt; Found ./android_cli.md
+    &gt; Found ./awk.md
+    &gt; Found ./bash.md
+    &gt; Found ./curl.md
+    &gt; Found ./daemons.md
+    &gt; Found ./docker.md
+    &gt; ...
+</code></pre><p>This is similar to &quot;Running a command for each item in a list&quot; part. You can use <code>awk</code> or <code>xargs</code> to do more advanced things. For simple operations you can use <code>find</code>.</p>
 
                     
                     </section>
@@ -854,10 +887,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./finding-things.html" class="navigation navigation-prev " aria-label="Previous page: Finding things"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./finding-files-based-on-size.html" class="navigation navigation-next " aria-label="Next page: Finding files based on size"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

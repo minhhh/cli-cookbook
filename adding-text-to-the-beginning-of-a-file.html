@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Adding text to the beginning of a file | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./replacing-strings.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./joining-all-lines-in-a-file.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="3.9" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -504,7 +504,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.9" data-path="adding-text-to-the-beginning-of-a-file.html">
+        <li class="chapter active" data-level="3.9" data-path="adding-text-to-the-beginning-of-a-file.html">
             
                 
                     <a href="./adding-text-to-the-beginning-of-a-file.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,8 +843,18 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
+                        <h1 id="adding-text-to-the-beginning-of-a-file">Adding text to the beginning of a file</h1>
+<h2 id="problem">Problem</h2>
+<p>You want to quickly add a piece of text to the beginning of a file.</p>
+<h2 id="solution">Solution</h2>
+<p>The simplest way is to just print the text together with the content of the file to a temporary file, then copy the temporary file to the original file.</p>
+<pre><code>    echo &apos;Begin&apos; | cat - &lt;file&gt; &gt; temp &amp;&amp; mv temp &lt;file&gt;
+</code></pre><p>Another way is to use <code>sed</code> program to insert the text to the beginning of the file and use edit in place functionality of <code>sed</code> so that we don&apos;t have to create temporary file.</p>
+<pre><code>    sed -i &apos;1s/^/Begin\n/&apos; &lt;file&gt;
 
+    # A shorter version
+    sed -i &apos;1iBegin&apos; &lt;file&gt;
+</code></pre>
                     
                     </section>
                 
@@ -854,10 +864,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./joining-all-lines-in-a-file.html" class="navigation navigation-prev " aria-label="Previous page: Joining all lines in a file"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./replacing-strings.html" class="navigation navigation-next " aria-label="Next page: Replacing strings"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

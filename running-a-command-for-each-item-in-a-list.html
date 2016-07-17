@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Running a command for each item in a list | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./generating-random-numbers.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./simulating-user-inputs.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="1.4" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -132,7 +132,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="running-a-command-for-each-item-in-a-list.html">
+        <li class="chapter active" data-level="1.4" data-path="running-a-command-for-each-item-in-a-list.html">
             
                 
                     <a href="./running-a-command-for-each-item-in-a-list.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,7 +843,25 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
+                        <h1 id="replacing-strings">Replacing strings</h1>
+<h2 id="problem">Problem</h2>
+<p>A super common thing you need to do is to do something repetively to a lot of files. For instance, change all the file names. For simple task like just changing the extension, you can do <code>mv *.png *.jpg</code>. But what if you want to replace spaces in the file name with <code>-</code> or <code>_</code>. Or maybe you want to add a hash to the file name. Things are a little bit more complicated.</p>
+<h2 id="solution">Solution</h2>
+<p>The universal solution to all of these problems is <code>xargs</code>. Basically, you can print all of the items that you need to do something with and pass it to <code>xargs</code> to process them one by one.</p>
+<p>The way to do this is:</p>
+<pre><code>    ...previous command | xargs -n 1 command
+</code></pre><p>The <code>-n 1</code> part is to ensure that you process the list one at a time. This only work if the previous command doesn&apos;t generate string with newline and spaces. If it does then we have to specify another character as delimiter by xargs, usually the null character <code>\0</code>. With the find command we can use option -print0.</p>
+<p>Let&apos;s try to add an extra extension to all our files in a folder</p>
+<pre><code>    find . ! -path . -print0 | xargs -n 1 -0 -I {} sh -c &apos;mv &quot;{}&quot; &quot;{}.extra&quot;&apos;
+</code></pre><p>The <code>find . ! -path . -print0</code> part find all files and folder, excluding current dir <code>.</code>. Then <code>xargs</code> take each of the name as <code>{}</code>, and execute move command <code>sh -c &apos;mv &quot;{}&quot; &quot;{}.extra&quot;&apos;</code> to them.</p>
+<p>Let&apos;s see how can we replace all spaces in all filenames in a folder with <code>-</code>.</p>
+<pre><code>    find . ! -path . | awk &apos;{ str=$0; gsub(&quot; &quot;, &quot;-&quot;, str); print &quot;mv \&quot;&quot;$0&quot;\&quot; \&quot;&quot;str&quot;\&quot;&quot; &quot;\0&quot;; }&apos; | xargs -n 3 -0 -I {} sh -c &apos;{}&apos;
+</code></pre><p>This time we have to do a little more quoting so that we can deal with filenames with space. Basically we generate a string of the command we want to run using <code>awk</code>. Then we pass the whole command string to xargs and run it.</p>
+<p>It&apos;s worth knowing that we can also do this directly with <code>awk</code></p>
+<pre><code>    .... previous command | awk &apos;{system(&quot;command \&quot;&quot;$0&quot;\&quot;&quot;)}&apos;
+</code></pre><p>So the previous command becomes</p>
+<pre><code>    find . ! -path . | awk &apos;{ str=$0; gsub(&quot; &quot;, &quot;-&quot;, str); system(&quot;mv \&quot;&quot;$0&quot;\&quot; \&quot;&quot;str&quot;\&quot;&quot; &quot;\0&quot;); }&apos;
+</code></pre><p>In this case using <code>awk</code> is simpler. However when you have to process several parameters/lines at a time, <code>xargs</code> proves to be more straight forward.</p>
 
                     
                     </section>
@@ -854,10 +872,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./simulating-user-inputs.html" class="navigation navigation-prev " aria-label="Previous page: Simulating user inputs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./generating-random-numbers.html" class="navigation navigation-next " aria-label="Next page: Generating random numbers"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

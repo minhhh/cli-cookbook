@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Counting word frequency | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./strings-and-text.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./batch-renaming.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="2.12" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -348,7 +348,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.12" data-path="counting-word-frequency.html">
+        <li class="chapter active" data-level="2.12" data-path="counting-word-frequency.html">
             
                 
                     <a href="./counting-word-frequency.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,8 +843,23 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
+                        <h1 id="counting-number-of-lines-or-characters">Counting number of lines or characters</h1>
+<h2 id="problem">Problem</h2>
+<p>We want to count word frequency and sort it from top to bottom.</p>
+<h2 id="solution">Solution</h2>
+<p>To make a list of word frequency in a document, we can combine <code>wc</code>, <code>sort</code> and <code>awk</code> like so</p>
+<pre><code>    cat ~/bitbucket/wiki/about.md | tr &apos; &apos; &apos;
+    &apos; | sort | uniq -c | sort -rnk1
 
+    # result
+    51 to
+    39 and
+    36 I
+    31 of
+    31 a
+    30 the
+    ...
+</code></pre>
                     
                     </section>
                 
@@ -854,10 +869,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./batch-renaming.html" class="navigation navigation-prev " aria-label="Previous page: Batch renaming"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./strings-and-text.html" class="navigation navigation-next " aria-label="Next page: Strings and text"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

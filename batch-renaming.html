@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Batch renaming | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./counting-word-frequency.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./copying-and-showing-progress.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="2.11" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -333,7 +333,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.11" data-path="batch-renaming.html">
+        <li class="chapter active" data-level="2.11" data-path="batch-renaming.html">
             
                 
                     <a href="./batch-renaming.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,8 +843,26 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
+                        <h1 id="batch-renaming">Batch renaming</h1>
+<h2 id="problem">Problem</h2>
+<p>This is actually one of the most common problems that we encouter everyday. Sometime somewhere someone will name all the files incorrectly and we want to change the extensions or some part of the filename to suit our needs.</p>
+<h2 id="solution">Solution</h2>
+<p>To change one kind of file name to another, we use <code>bash</code> for loop with <code>find</code></p>
+<pre><code>    # change from .html to .txt
+    for file in *.html; do
+        mv &quot;$file&quot; &quot;`basename $file .html`.txt&quot;
+    done
+</code></pre><p>You can probably do the same with <code>awk</code> as well. The principle is to list the file first then rename them one by one.</p>
+<p>However, there&apos;s a more convenient way to batch rename, which is the <code>rename</code> command. You can use it like so</p>
+<pre><code>    rename &apos;s/\.html$/\.txt/&apos; *.html
+</code></pre><p>The syntax is <code>rename &quot;regex-rule&quot; &lt;files&gt;</code>. So if you can do some simple regex, it&apos;s better to do this way.</p>
+<p>Another example is to change all filenames to lower case or upper case. Again, you can use <code>rename</code></p>
+<pre><code>    # uppper to lower
+    rename -f &apos;y/A-Z/a-z/&apos; *
 
+    #  lower to uppper
+    rename -f &apos;y/a-z/A-Z/&apos; *
+</code></pre>
                     
                     </section>
                 
@@ -854,10 +872,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./copying-and-showing-progress.html" class="navigation navigation-prev " aria-label="Previous page: Copying and showing progress"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./counting-word-frequency.html" class="navigation navigation-next " aria-label="Next page: Counting word frequency"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

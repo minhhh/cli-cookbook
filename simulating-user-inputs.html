@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Simulating user inputs | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./running-a-command-for-each-item-in-a-list.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./converting-date-and-time.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="1.3" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -117,7 +117,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="simulating-user-inputs.html">
+        <li class="chapter active" data-level="1.3" data-path="simulating-user-inputs.html">
             
                 
                     <a href="./simulating-user-inputs.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,8 +843,14 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
-
+                        <h1 id="simulating-user-inputs">Simulating user inputs</h1>
+<h2 id="problem">Problem</h2>
+<p>Some programs require user to enter certain command before proceeding, we want to be able to send input to those programs automatically.</p>
+<h2 id="solution">Solution</h2>
+<p>The <code>expect</code> program can be used for this purpose. It will detect certain text that the program output such as a question, or a prompt, then it sends the the texts that we&apos;ve prepares to the program.</p>
+<p>For instance, send ssh password automatically</p>
+<pre><code>    expect -c &quot;ssh abc@10.0.0.10\n ;  expect password: ; send mypassword\n ; interact &quot;
+</code></pre>
                     
                     </section>
                 
@@ -854,10 +860,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./converting-date-and-time.html" class="navigation navigation-prev " aria-label="Previous page: Converting date and time"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./running-a-command-for-each-item-in-a-list.html" class="navigation navigation-next " aria-label="Next page: Running a command for each item in a list"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

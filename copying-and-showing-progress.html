@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Copying and showing progress | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./batch-renaming.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./counting-number-of-lines-or-characters.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="2.10" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -318,7 +318,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.10" data-path="copying-and-showing-progress.html">
+        <li class="chapter active" data-level="2.10" data-path="copying-and-showing-progress.html">
             
                 
                     <a href="./copying-and-showing-progress.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,7 +843,21 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
+                        <h1 id="copying-and-showing-progress">Copying and showing progress</h1>
+<h2 id="problem">Problem</h2>
+<p>You constantly copying big folders or big files. You see the files are being copied, but it&apos;s quite annoying when copying big files that you don&apos;t know how much of the file has been copied.</p>
+<h2 id="solution">Solution</h2>
+<p>You can use <code>rsync</code> with <code>-P</code> options</p>
+<pre><code>    rsync -larP source dest
+    &gt; t/a
+    &gt;         19 100%    0.04kB/s    0:00:00 (xfer#843, to-check=8/1137)
+    &gt; t/b
+    &gt;         35 100%    0.08kB/s    0:00:00 (xfer#844, to-check=7/1137)
+    &gt; ...
+</code></pre><p>What&apos;s even better about <code>rsync</code> is that it won&apos;t copy files that are the same in the destination so the next time you change something in the source folder you can execute the same command again and it will only copy the change, not the whole folder again.</p>
+<p>Still, when copying a folder with a lot of files, you still don&apos;t know the copying progress. In this case, we can pipe the result of <code>rsync</code> to another program called <code>pv</code>. This <code>pv</code> program will show you a progress bar and ETA time.</p>
+<pre><code>    export SOURCE=&lt;source&gt; DEST=&lt;dest&gt; &amp;&amp; export SC=$(find &quot;$SOURCE&quot; | wc -l) &amp;&amp; rsync -vrltd  --stats --human-readable &quot;$SOURCE&quot; &quot;$DEST&quot; | pv -lep -s $SC &gt; /dev/null
+</code></pre><p>Even though this looks complicated, it&apos;s actually quite straight forward. First we use temporary variables to store the source and the destination folders. Then we count how many items are there in the source folder. Then we use <code>rsync</code> to copy files one by one and print them out. <code>pv</code> will pick up the number of lines and use that with the total number of items to calculate the complete percentage.</p>
 
                     
                     </section>
@@ -854,10 +868,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./counting-number-of-lines-or-characters.html" class="navigation navigation-prev " aria-label="Previous page: Counting number of lines or characters"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./batch-renaming.html" class="navigation navigation-next " aria-label="Next page: Batch renaming"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

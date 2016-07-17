@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Finding files in a folder | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./administration.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./finding-files-based-on-size.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="4.3" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -615,7 +615,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="finding-files-in-a-folder.html">
+        <li class="chapter active" data-level="4.3" data-path="finding-files-in-a-folder.html">
             
                 
                     <a href="./finding-files-in-a-folder.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,8 +843,16 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
-
+                        <h1 id="finding-files-in-a-folder">Finding files in a folder</h1>
+<h2 id="problem">Problem</h2>
+<p>You want to find a file by name in a folder, but also want to exclude certain folder in the find path. Also, you want to run some command after finding the files.</p>
+<h2 id="solution">Solution</h2>
+<p>The <code>find</code> tool can find file/folders by name, exclude certain folders/files and execute command on found items.</p>
+<p>Find files by name, excluding the git folders</p>
+<pre><code>    find . -not -path &quot;./.git/*&quot; -iname &quot;my.png&quot;
+</code></pre><p>Remove all .svn files in a directory</p>
+<pre><code>    find . -name &quot;.svn&quot; -exec rm -rf {} \;
+</code></pre>
                     
                     </section>
                 
@@ -854,10 +862,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./finding-files-based-on-size.html" class="navigation navigation-prev " aria-label="Previous page: Finding files based on size"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./administration.html" class="navigation navigation-next " aria-label="Next page: Administration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Deleting lines that contain a specific string | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./finding-things.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./changing-case.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="3.12" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -549,7 +549,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.12" data-path="deleting-lines-that-contain-a-specific-string.html">
+        <li class="chapter active" data-level="3.12" data-path="deleting-lines-that-contain-a-specific-string.html">
             
                 
                     <a href="./deleting-lines-that-contain-a-specific-string.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,8 +843,18 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
-
+                        <h1 id="deleting-lines-that-contain-a-specific-string">Deleting lines that contain a specific string</h1>
+<h2 id="problem">Problem</h2>
+<p>In a lot of occasions, you would want to remove a particular line in a file if it exists.</p>
+<h2 id="solution">Solution</h2>
+<p>You can use a lot of tools to do this such as <code>awk</code>, <code>bash</code>, <code>sed</code>, etc.</p>
+<p>Using <code>sed</code> is pretty intuitive. To remove a line contains a specific string we do like this</p>
+<pre><code>    # Will remove all lines containing helloworld
+    sed -i &apos;/helloworld/d&apos; ./infile
+</code></pre><p>Sometimes we want to match the whole line, we can do like this</p>
+<pre><code>    # Will remove all lines which are exactly `helloworld`
+    sed -i &apos;/^helloworld$/d&apos; ./infile
+</code></pre>
                     
                     </section>
                 
@@ -854,10 +864,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./changing-case.html" class="navigation navigation-prev " aria-label="Previous page: Changing case"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./finding-things.html" class="navigation navigation-next " aria-label="Next page: Finding things"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

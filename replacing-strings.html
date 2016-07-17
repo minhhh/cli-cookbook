@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Miscellaneous | CLI cookbook</title>
+        <title>Replacing strings | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./doing-mathematics.html" />
+    <link rel="next" href="./changing-case.html" />
     
     
-    <link rel="prev" href="./pausing-execution.html" />
+    <link rel="prev" href="./adding-text-to-the-beginning-of-a-file.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="3.10" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -519,7 +519,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.10" data-path="replacing-strings.html">
+        <li class="chapter active" data-level="3.10" data-path="replacing-strings.html">
             
                 
                     <a href="./replacing-strings.html">
@@ -701,7 +701,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="miscellaneous.html">
+        <li class="chapter " data-level="6" data-path="miscellaneous.html">
             
                 
                     <a href="./miscellaneous.html">
@@ -843,8 +843,23 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>Stuff that does not fit anywhere should go here</p>
+                        <h1 id="replacing-strings">Replacing strings</h1>
+<h2 id="problem">Problem</h2>
+<p>You want to replace one string by another in one or many files.</p>
+<h2 id="solution">Solution</h2>
+<p>You can use <code>sed</code> to do various string manipulation tasks</p>
+<p>To replace <code>old-word</code> by <code>new-word</code></p>
+<pre><code>    sed -i &apos;s/old-word/new-word/g&apos; *.txt
 
+    #in mac
+    sed &apos;s/old-word/new-word/g&apos; -i &apos;&apos; *.txt
+    sed &apos;s/old-word/new-word/g&apos; *.txt
+</code></pre><p>Some times the words contain single quotes, in these cases, we have to escape them like so</p>
+<pre><code>    sed &apos;s/old-word/new&apos;\&apos;&apos;word/g&apos; *.txt
+</code></pre><p>If you want <code>sed</code> to read from standard input, you have to use <code>-e</code> option</p>
+<pre><code>    echo &quot;hello world&quot; | sed -e &apos;s/hello/hi/g&apos;
+    &gt; hi world
+</code></pre>
                     
                     </section>
                 
@@ -854,10 +869,10 @@
         </div>
 
         
-        <a href="./pausing-execution.html" class="navigation navigation-prev " aria-label="Previous page: Pausing execution"><i class="fa fa-angle-left"></i></a>
+        <a href="./adding-text-to-the-beginning-of-a-file.html" class="navigation navigation-prev " aria-label="Previous page: Adding text to the beginning of a file"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./doing-mathematics.html" class="navigation navigation-next " aria-label="Next page: Doing mathematics"><i class="fa fa-angle-right"></i></a>
+        <a href="./changing-case.html" class="navigation navigation-next " aria-label="Next page: Changing case"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
