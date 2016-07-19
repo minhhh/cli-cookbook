@@ -37,6 +37,18 @@ To find only file or folder we have to specify the type like so
     find . -type d -iname 'win*'
 ```
 
+To exclude specific folders we use the `-not -iname` option
+
+```
+    find -name "*.js" -not -iname "hello.js"
+```
+
+To exclude specific folders we use the `-not -path` option
+
+```
+    find -name "*.js" -not -path "./directory/*"
+```
+
 Running commands on the files you find.
 ```
     find . -name '*.md' -exec echo 'Found {}' ';'
