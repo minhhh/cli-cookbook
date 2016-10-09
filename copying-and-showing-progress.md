@@ -26,3 +26,4 @@ Still, when copying a folder with a lot of files, you still don't know the copyi
 
 Even though this looks complicated, it's actually quite straight forward. First we use temporary variables to store the source and the destination folders. Then we count how many items are there in the source folder. Then we use `rsync` to copy files one by one and print them out. `pv` will pick up the number of lines and use that with the total number of items to calculate the complete percentage.
 
+Note that if you want to copy a folder inside another folder then you should not include `/` in `<source>`, for instance, set it to `MyFolder`. If you want to copy and rename `MyFolder` to `AnotherFolder` then `<source>` should be set to `MyFolder/`.
