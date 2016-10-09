@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Joining all lines in a file | CLI cookbook</title>
+        <title>Comparing file names in 2 directories | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./adding-text-to-the-beginning-of-a-file.html" />
+    <link rel="next" href="./strings-and-text.html" />
     
     
-    <link rel="prev" href="./merging-content-of-2-files-side-by-side.html" />
+    <link rel="prev" href="./counting-word-frequency.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3.8" data-basepath="." data-revision="Sun Oct 09 2016 14:37:35 GMT+0700 (ICT)">
+    <div class="book" data-level="2.13" data-basepath="." data-revision="Sun Oct 09 2016 14:37:35 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -363,7 +363,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.13" data-path="comparing-file-names-in-2-directories.html">
+        <li class="chapter active" data-level="2.13" data-path="comparing-file-names-in-2-directories.html">
             
                 
                     <a href="./comparing-file-names-in-2-directories.html">
@@ -504,7 +504,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.8" data-path="joining-all-lines-in-a-file.html">
+        <li class="chapter " data-level="3.8" data-path="joining-all-lines-in-a-file.html">
             
                 
                     <a href="./joining-all-lines-in-a-file.html">
@@ -858,16 +858,16 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="joining-all-lines-in-a-file">Joining all lines in a file</h1>
+                        <h1 id="comparing-file-names-in-2-directories">Comparing file names in 2 directories</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to join all lines in a file, often separated by a comma</p>
+<p>You want to compare the content of 2 directory by filenames, assuming files with the same name will have the same content</p>
 <h2 id="solution">Solution</h2>
-<p>You can use <code>paste</code> to achieve this like so</p>
-<pre><code>    # Join with tab separate each line
-    paste -s &lt;filename&gt;
-
-    # join with delimiter comma
-    paste -d, -s &lt;filename&gt;
+<p>You can use <code>diff</code> like so</p>
+<pre><code>    diff -rqu &lt;directory-1&gt; &lt;directory-2&gt;
+    # Only in directory-1: file1
+    # Only in directory-1: file2
+    # Only in directory-2: file3
+    # Only in directory-2: file4
 </code></pre>
                     
                     </section>
@@ -878,10 +878,10 @@
         </div>
 
         
-        <a href="./merging-content-of-2-files-side-by-side.html" class="navigation navigation-prev " aria-label="Previous page: Merging content of 2 files side by side"><i class="fa fa-angle-left"></i></a>
+        <a href="./counting-word-frequency.html" class="navigation navigation-prev " aria-label="Previous page: Counting word frequency"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./adding-text-to-the-beginning-of-a-file.html" class="navigation navigation-next " aria-label="Next page: Adding text to the beginning of a file"><i class="fa fa-angle-right"></i></a>
+        <a href="./strings-and-text.html" class="navigation navigation-next " aria-label="Next page: Strings and text"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

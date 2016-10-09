@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.10" data-basepath="." data-revision="Sun Jul 17 2016 21:28:55 GMT+0700 (ICT)">
+    <div class="book" data-level="2.10" data-basepath="." data-revision="Sun Oct 09 2016 14:37:35 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -358,6 +358,21 @@
                             <b>2.12.</b>
                         
                         Counting word frequency
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="comparing-file-names-in-2-directories.html">
+            
+                
+                    <a href="./comparing-file-names-in-2-directories.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.13.</b>
+                        
+                        Comparing file names in 2 directories
                     </a>
             
             
@@ -858,6 +873,7 @@
 <p>Still, when copying a folder with a lot of files, you still don&apos;t know the copying progress. In this case, we can pipe the result of <code>rsync</code> to another program called <code>pv</code>. This <code>pv</code> program will show you a progress bar and ETA time.</p>
 <pre><code>    export SOURCE=&lt;source&gt; DEST=&lt;dest&gt; &amp;&amp; export SC=$(find &quot;$SOURCE&quot; | wc -l) &amp;&amp; rsync -vrltd  --stats --human-readable &quot;$SOURCE&quot; &quot;$DEST&quot; | pv -lep -s $SC &gt; /dev/null
 </code></pre><p>Even though this looks complicated, it&apos;s actually quite straight forward. First we use temporary variables to store the source and the destination folders. Then we count how many items are there in the source folder. Then we use <code>rsync</code> to copy files one by one and print them out. <code>pv</code> will pick up the number of lines and use that with the total number of items to calculate the complete percentage.</p>
+<p>Note that if you want to copy a folder inside another folder then you should not include <code>/</code> in <code>&lt;source&gt;</code>, for instance, set it to <code>MyFolder</code>. If you want to copy and rename <code>MyFolder</code> to <code>AnotherFolder</code> then <code>&lt;source&gt;</code> should be set to <code>MyFolder/</code>.</p>
 
                     
                     </section>
