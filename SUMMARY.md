@@ -36,6 +36,7 @@ mmand-for-each-item-in-a-list.md
     * [Replacing strings](replacing-strings.md)
     * [Changing case](changing-case.md)
     * [Deleting lines that contain a specific string](deleting-lines-that-contain-a-specific-string.md)
+    * [Comparing 2 folders](comparing-2-folders.md)
 * [Finding things](finding-things.md)
     * [Finding files based on name](finding-files-based-on-name.md)
     * [Finding files based on size](finding-files-based-on-size.md)
