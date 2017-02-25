@@ -1,4 +1,4 @@
-# Replacing strings
+# Running a command for each item in a list
 ## Problem
 A super common thing you need to do is to do something repetively to a lot of files. For instance, change all the file names. For simple task like just changing the extension, you can do `mv *.png *.jpg`. But what if you want to replace spaces in the file name with `-` or `_`. Or maybe you want to add a hash to the file name. Things are a little bit more complicated.
 
