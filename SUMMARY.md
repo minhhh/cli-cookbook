@@ -40,6 +40,7 @@ mmand-for-each-item-in-a-list.md
     * [Finding files based on name](finding-files-based-on-name.md)
     * [Finding files based on size](finding-files-based-on-size.md)
     * [Finding files in a folder](finding-files-in-a-folder.md)
+    * [Counting the number of files or folders](counting-the-number-of-files-or-folders.md)
 * [Administration](administration.md)
     * [Shutting down](shutting-down.md)
     * [Execute a command at a specified time](execute-a-command-at-a-specified-time.md)
