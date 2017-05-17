@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Running a list of commands | CLI cookbook</title>
+        <title>Counting the number of files or folders | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./converting-date-and-time.html" />
+    <link rel="next" href="./administration.html" />
     
     
-    <link rel="prev" href="./the-shell.html" />
+    <link rel="prev" href="./finding-files-in-a-folder.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1.1" data-basepath="." data-revision="Wed May 17 2017 10:21:48 GMT+0700 (ICT)">
+    <div class="book" data-level="4.4" data-basepath="." data-revision="Wed May 17 2017 10:21:48 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -87,7 +87,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.1" data-path="running-a-list-of-commands.html">
+        <li class="chapter " data-level="1.1" data-path="running-a-list-of-commands.html">
             
                 
                     <a href="./running-a-list-of-commands.html">
@@ -660,7 +660,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="counting-the-number-of-files-or-folders.html">
+        <li class="chapter active" data-level="4.4" data-path="counting-the-number-of-files-or-folders.html">
             
                 
                     <a href="./counting-the-number-of-files-or-folders.html">
@@ -888,38 +888,32 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="running-a-list-of-commands">Running a list of commands</h1>
+                        <h1 id="counting-the-number-of-files-or-folders">Counting the number of files or folders</h1>
 <h2 id="problem">Problem</h2>
-<p>You want to run a list of commands in order, sometimes in parallel. Sometimes you want to run a command only if another command succeeds or fails.</p>
+<p>You want to count the number of files and/or folders in a certain folder</p>
 <h2 id="solution">Solution</h2>
-<p>To run more than one command in order, simply type each command in the order you want them to run, separating them with a semicolon <code>;</code></p>
-<pre><code>    echo 1; echo 2; echo 3;
-    &gt; 1
-    &gt; 2
-    &gt; 3
-</code></pre><p>To run a command only if the previous ones succeed, we can use <code>&amp;&amp;</code></p>
-<pre><code>    ls &lt;file&gt; &amp;&amp; rm &lt;file&gt; -rf
-</code></pre><p>To run a command only if the previous ones fail, we use <code>||</code></p>
-<pre><code>    ls file &amp;&gt; /dev/null || echo &quot;File not exist&quot;
-    &gt; File not exist
-</code></pre><p>To run several commands in parallel, you can run them as background process using <code>&amp;</code> then <code>wait</code></p>
-<pre><code>process1 &amp;
-process2 &amp;
-process3 &amp;
-process4 &amp;
-wait
-process5 &amp;
-process6 &amp;
-process7 &amp;
-process8 &amp;
-wait
-</code></pre><p>If you want to make sure that all processes succeeds together, you can use npm package <a href="https://github.com/keithamus/parallelshell" target="_blank"><code>parallelshell</code></a></p>
-<pre><code>    parallelshell &quot;echo 1&quot; &quot;echo 2&quot; &quot;echo 3&quot;
-</code></pre><h1 id="references">References</h1>
-<ul>
-<li><a href="http://stackoverflow.com/questions/19543139/bash-script-processing-commands-in-parallel" target="_blank">http://stackoverflow.com/questions/19543139/bash-script-processing-commands-in-parallel</a></li>
-</ul>
+<p>The simplest solution is to combine <code>find</code> and <code>wc</code></p>
+<p>To count all files and folders recursively</p>
+<pre><code>    # Count all files and folders in the current folder
+    find . | wc -l
+    &gt; 5254
 
+    # Count all files and folders in a certain folder with name &lt;name&gt;
+    find &lt;name&gt; | wc -l
+    &gt; 5054
+</code></pre><p>To count only files</p>
+<pre><code>    find . -type f | wc -l
+    &gt; 4232
+</code></pre><p>To count only folders (this will also count the current folder so remember to subtract 1 if you want the correct number)</p>
+<pre><code>    find . -type d | wc -l
+    &gt; 432
+</code></pre><p>To count folders and files in the current folder only, not recursively, use <code>-depth 1</code> parameter</p>
+<pre><code>    find . -type d -depth 1 | wc -l
+    &gt; 29
+
+    find . -type f -depth 1 | wc -l
+    &gt; 2
+</code></pre>
                     
                     </section>
                 
@@ -929,10 +923,10 @@ wait
         </div>
 
         
-        <a href="./the-shell.html" class="navigation navigation-prev " aria-label="Previous page: The shell"><i class="fa fa-angle-left"></i></a>
+        <a href="./finding-files-in-a-folder.html" class="navigation navigation-prev " aria-label="Previous page: Finding files in a folder"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./converting-date-and-time.html" class="navigation navigation-next " aria-label="Next page: Converting date and time"><i class="fa fa-angle-right"></i></a>
+        <a href="./administration.html" class="navigation navigation-next " aria-label="Next page: Administration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

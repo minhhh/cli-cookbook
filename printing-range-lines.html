@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3.3" data-basepath="." data-revision="Wed Jan 25 2017 12:17:55 GMT+0700 (ICT)">
+    <div class="book" data-level="3.3" data-basepath="." data-revision="Wed May 17 2017 10:21:48 GMT+0700 (ICT)">
     
 
 <div class="book-summary">
@@ -157,6 +157,21 @@
                             <b>1.5.</b>
                         
                         Generating random numbers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="using-crontab-to-commit-your-git-repo.html">
+            
+                
+                    <a href="./using-crontab-to-commit-your-git-repo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Using crontab to commit your git repo
                     </a>
             
             
@@ -645,6 +660,21 @@
             
         </li>
     
+        <li class="chapter " data-level="4.4" data-path="counting-the-number-of-files-or-folders.html">
+            
+                
+                    <a href="./counting-the-number-of-files-or-folders.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Counting the number of files or folders
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -866,15 +896,15 @@
 <pre><code>    wc -l &lt;file&gt;
     cat &lt;file&gt; | wc -l
 </code></pre><p>Print the first <code>n</code> line with <code>head</code></p>
-<pre><code>    head -n 10
+<pre><code>    head -n 10 &lt;file&gt;
 </code></pre><p>Print last <code>n</code> line with <code>tail</code></p>
-<pre><code>    tail -n 10
+<pre><code>    tail -n 10 &lt;file&gt;
 </code></pre><p>Print everything except the first <code>n</code> line with <code>tail</code></p>
-<pre><code>    tail -n +7
+<pre><code>    tail -n +7 &lt;file&gt;
 </code></pre><p>Print everything except the last <code>n</code> line with <code>head</code></p>
-<pre><code>    head -n -2
+<pre><code>    head -n -2 &lt;file&gt;
 </code></pre><p>Print from line <code>x</code> to line <code>y</code> with <code>sed</code></p>
-<pre><code>    sed -n &quot;1,3p&quot;
+<pre><code>    sed -n &quot;1,3p&quot; &lt;file&gt;
 </code></pre>
                     
                     </section>
