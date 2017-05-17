@@ -14,29 +14,29 @@ First, we can count the number of lines in a file like this
 Print the first `n` line with `head`
 
 ```
-    head -n 10
+    head -n 10 <file>
 ```
 
 Print last `n` line with `tail`
 
 ```
-    tail -n 10
+    tail -n 10 <file>
 ```
 
 Print everything except the first `n` line with `tail`
 
 ```
-    tail -n +7
+    tail -n +7 <file>
 ```
 
 Print everything except the last `n` line with `head`
 
 ```
-    head -n -2
+    head -n -2 <file>
 ```
 
 Print from line `x` to line `y` with `sed`
 
 ```
-    sed -n "1,3p"
+    sed -n "1,3p" <file>
 ```
