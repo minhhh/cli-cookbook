@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Batch renaming | CLI cookbook</title>
+        <title>Converting newline formatting from DOS to Unix and vice versa | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="./counting-word-frequency.html" />
+    <link rel="next" href="./finding-things.html" />
     
     
-    <link rel="prev" href="./copying-and-showing-progress.html" />
+    <link rel="prev" href="./deleting-lines-that-contain-a-specific-string.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.11" data-basepath="." data-revision="Fri Feb 09 2018 09:34:00 GMT+0700 (+07)">
+    <div class="book" data-level="3.13" data-basepath="." data-revision="Fri Feb 09 2018 09:34:00 GMT+0700 (+07)">
     
 
 <div class="book-summary">
@@ -348,7 +348,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.11" data-path="batch-renaming.html">
+        <li class="chapter " data-level="2.11" data-path="batch-renaming.html">
             
                 
                     <a href="./batch-renaming.html">
@@ -594,7 +594,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.13" data-path="converting-newline-formatting-from-dos-to-unix-and-vice-versa.html">
+        <li class="chapter active" data-level="3.13" data-path="converting-newline-formatting-from-dos-to-unix-and-vice-versa.html">
             
                 
                     <a href="./converting-newline-formatting-from-dos-to-unix-and-vice-versa.html">
@@ -903,26 +903,22 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="batch-renaming">Batch renaming</h1>
+                        <h1 id="converting-newline-formatting-from-dos-to-unix-and-vice-versa">Converting newline formatting from DOS to Unix and vice versa</h1>
 <h2 id="problem">Problem</h2>
-<p>This is actually one of the most common problems that we encouter everyday. Sometime somewhere someone will name all the files incorrectly and we want to change the extensions or some part of the filename to suit our needs.</p>
+<p>You have some files that use Windows newline characters but you want to use them in Linux or MacOS, or vice versa.</p>
 <h2 id="solution">Solution</h2>
-<p>To change one kind of file name to another, we use <code>bash</code> for loop with <code>find</code></p>
-<pre><code>    # change from .html to .txt
-    for file in *.html; do
-        mv &quot;$file&quot; &quot;`basename $file .html`.txt&quot;
-    done
-</code></pre><p>You can probably do the same with <code>awk</code> as well. The principle is to list the file first then rename them one by one.</p>
-<p>However, there&apos;s a more convenient way to batch rename, which is the <code>rename</code> command. You can use it like so</p>
-<pre><code>    rename &apos;s/\.html$/\.txt/&apos; *.html
-</code></pre><p>The syntax is <code>rename &quot;regex-rule&quot; &lt;files&gt;</code>. So if you can do some simple regex, it&apos;s better to do this way.</p>
-<p>Another example is to change all filenames to lower case or upper case. Again, you can use <code>rename</code></p>
-<pre><code>    # uppper to lower
-    rename -f &apos;y/A-Z/a-z/&apos; *
+<p>You can use a lot of tools to do this such as <code>sed,</code>perl<code>,</code>dos2unix<code>,</code>unix2dos`</p>
+<p>One simple way is to use <code>perl</code> so you don&apos;t have to install new programs</p>
+<pre><code>    perl -pi -e &apos;s/\r\n|\n|\r/\r\n/g&apos; file-to-convert  # Convert to DOS
+    perl -pi -e &apos;s/\r\n|\n|\r/\n/g&apos;   file-to-convert  # Convert to UNIX
+</code></pre><p>If we want to batch convert files, we can combine it with <code>find</code> and <code>xargs</code></p>
+<pre><code>    # Find all .cs file and convert newline to UNIX
+    find . -iname *.cs -print0 | xargs -n 1 -I {} -0 perl -pi -e &apos;s/\r\n|\n|\r/\n/g&apos; &apos;{}&apos;
+</code></pre><p><strong>References</strong></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/6373888/converting-newline-formatting-from-mac-to-windows" target="_blank">https://stackoverflow.com/questions/6373888/converting-newline-formatting-from-mac-to-windows</a></li>
+</ul>
 
-    #  lower to uppper
-    rename -f &apos;y/a-z/A-Z/&apos; *
-</code></pre>
                     
                     </section>
                 
@@ -932,10 +928,10 @@
         </div>
 
         
-        <a href="./copying-and-showing-progress.html" class="navigation navigation-prev " aria-label="Previous page: Copying and showing progress"><i class="fa fa-angle-left"></i></a>
+        <a href="./deleting-lines-that-contain-a-specific-string.html" class="navigation navigation-prev " aria-label="Previous page: Deleting lines that contain a specific string"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./counting-word-frequency.html" class="navigation navigation-next " aria-label="Next page: Counting word frequency"><i class="fa fa-angle-right"></i></a>
+        <a href="./finding-things.html" class="navigation navigation-next " aria-label="Next page: Finding things"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
