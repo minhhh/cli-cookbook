@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.13" data-basepath="." data-revision="Fri Feb 09 2018 09:34:00 GMT+0700 (+07)">
+    <div class="book" data-level="2.13" data-basepath="." data-revision="Fri Feb 23 2018 14:42:27 GMT+0700 (+07)">
     
 
 <div class="book-summary">
@@ -910,9 +910,15 @@
 <p>You can use <code>diff</code> with <code>-rq</code> option</p>
 <pre><code>    diff -rq &lt;folder1&gt; &lt;folder2&gt;
 </code></pre><p>If you want more detailed report of the differences, you can use a <code>Nodejs</code> tool called <code>dir-compare</code>. First, install nodejs, then install <code>dir-compare</code> by this command <code>npm install dir-compare -g</code>. Then you can use it like this:</p>
-<pre><code>    dircompare -ca &lt;folder1&gt; &lt;folder2&gt;
-</code></pre><p>There are other options such as to exclude directories or files by name. You can discover more by using <code>dircompare -h</code></p>
+<pre><code>    # Compare files by content
+    dircompare -ca &lt;folder1&gt; &lt;folder2&gt;
 
+    # Ignore some folders
+    dircompare -d &lt;folder1&gt; &lt;folder2&gt; -x &lt;folder-to-ignore&gt;
+</code></pre><p>There are other options such as to exclude directories or files by name. You can discover more by using <code>dircompare -h</code></p>
+<p>If you only want to compare folders by filename, not file content, you can use <code>diff</code></p>
+<pre><code>    diff &lt;(ls -1a ./dir1) &lt;(ls -1a ./dir2)
+</code></pre>
                     
                     </section>
                 
