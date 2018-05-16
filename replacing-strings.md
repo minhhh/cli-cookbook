@@ -10,7 +10,7 @@ To replace `old-word` by `new-word`
     sed -i 's/old-word/new-word/g' *.txt
 
     #in mac
-    sed 's/old-word/new-word/g' -i '' *.txt
+    sed -i '' 's/old-word/new-word/g' *.txt
     sed 's/old-word/new-word/g' *.txt
 ```
 
