@@ -4,8 +4,8 @@
   "description": "A cookbook for command line tools.",
   "main": "index.js",
   "scripts": {
-    "generate": "git clean -df && gitbook build . ./gh-pages",
-    "serve": "npm run generate && cd gh-pages && python -m SimpleHTTPServer",
+    "generate": "git clean -df && $(npm bin)/gitbook build . ./gh-pages",
+    "serve": "$(npm bin)/gitbook serve",
     "deploy": "npm run generate && gh-pages -d gh-pages -b gh-pages && git clean -df && git push"
   },
   "repository": {
@@ -13,7 +13,7 @@
     "url": "git://github.com/minhhh/js-cookbook.git"
   },
   "engines": {
-    "node": ">=0.11.10"
+    "node": ">=8.10.0"
   },
   "author": "",
   "keywords": [
@@ -26,8 +26,12 @@
   "license": "MIT",
   "homepage": "https://github.com/minhhh/cli-cookbook",
   "dependencies": {
-    "gitbook-cli": "~0.3.3",
-    "gh-pages-cli": "~0.2.0"
+    "gh-pages-cli": "^0.2.0",
+    "gitbook-cli": "^2.3.2",
+    "yarn": "^1.17.3"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/minhhh/js-cookbook/issues"
+  }
 }

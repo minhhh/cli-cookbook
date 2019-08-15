@@ -1,909 +1,761 @@
+
 <!DOCTYPE HTML>
 <html lang="en" >
-    
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Searching text in files | CLI cookbook</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Searching text in files · CLI cookbook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.4.3">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
+    
     <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+    
         
     
+        
+    
+        
+    
+        
+    
+        
     
 
         
     
     
-    <link rel="next" href="./removing-duplicated-lines.html" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="removing-duplicated-lines.html" />
     
     
-    <link rel="prev" href="./strings-and-text.html" />
+    <link rel="prev" href="strings-and-text.html" />
     
 
-        
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-    <div class="book" data-level="3.1" data-basepath="." data-revision="Fri Feb 23 2018 14:42:27 GMT+0700 (+07)">
-    
-
-<div class="book-summary">
-    <div class="book-search" role="search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
-    <nav role="navigation">
-        <ul class="summary">
             
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="./index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introduction
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="the-shell.html">
-            
-                
-                    <a href="./the-shell.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        The shell
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1" data-path="running-a-list-of-commands.html">
-            
-                
-                    <a href="./running-a-list-of-commands.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.1.</b>
-                        
-                        Running a list of commands
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="converting-date-and-time.html">
-            
-                
-                    <a href="./converting-date-and-time.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.2.</b>
-                        
-                        Converting date and time
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="simulating-user-inputs.html">
-            
-                
-                    <a href="./simulating-user-inputs.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.3.</b>
-                        
-                        Simulating user inputs
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="running-a-command-for-each-item-in-a-list.html">
-            
-                
-                    <a href="./running-a-command-for-each-item-in-a-list.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.4.</b>
-                        
-                        Running a command for each item in a list
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="generating-random-numbers.html">
-            
-                
-                    <a href="./generating-random-numbers.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.5.</b>
-                        
-                        Generating random numbers
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="using-crontab-to-commit-your-git-repo.html">
-            
-                
-                    <a href="./using-crontab-to-commit-your-git-repo.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.6.</b>
-                        
-                        Using crontab to commit your git repo
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="managing-files-and-directories.html">
-            
-                
-                    <a href="./managing-files-and-directories.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        Managing files and directories
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.1" data-path="watching-dir.html">
-            
-                
-                    <a href="./watching-dir.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.1.</b>
-                        
-                        Watching directories
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="listing-file-and-folder-sizes.html">
-            
-                
-                    <a href="./listing-file-and-folder-sizes.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.</b>
-                        
-                        Listing file and folder sizes
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3" data-path="generating-file-with-particular-size.html">
-            
-                
-                    <a href="./generating-file-with-particular-size.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.3.</b>
-                        
-                        Generating random file with particular size
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4" data-path="printing-a-file-in-text-or-hex.html">
-            
-                
-                    <a href="./printing-a-file-in-text-or-hex.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.</b>
-                        
-                        Printing a file in text or hex
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5" data-path="splitting-and-merging-files.html">
-            
-                
-                    <a href="./splitting-and-merging-files.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.</b>
-                        
-                        Splitting and merging files
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.6" data-path="converting-files-to-different-format.html">
-            
-                
-                    <a href="./converting-files-to-different-format.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.6.</b>
-                        
-                        Converting files to different format
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.7" data-path="generating-checksum.html">
-            
-                
-                    <a href="./generating-checksum.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.7.</b>
-                        
-                        Generating checksum
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.8" data-path="generating-mime.html">
-            
-                
-                    <a href="./generating-mime.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.8.</b>
-                        
-                        Generating mime
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.9" data-path="counting-number-of-lines-or-characters.html">
-            
-                
-                    <a href="./counting-number-of-lines-or-characters.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.9.</b>
-                        
-                        Counting number of lines or characters
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.10" data-path="copying-and-showing-progress.html">
-            
-                
-                    <a href="./copying-and-showing-progress.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.10.</b>
-                        
-                        Copying and showing progress
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.11" data-path="batch-renaming.html">
-            
-                
-                    <a href="./batch-renaming.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.11.</b>
-                        
-                        Batch renaming
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.12" data-path="counting-word-frequency.html">
-            
-                
-                    <a href="./counting-word-frequency.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.12.</b>
-                        
-                        Counting word frequency
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2.13" data-path="comparing-2-folders.html">
-            
-                
-                    <a href="./comparing-2-folders.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.13.</b>
-                        
-                        Comparing 2 folders
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="strings-and-text.html">
-            
-                
-                    <a href="./strings-and-text.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        Strings and text
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="3.1" data-path="searching-text.html">
-            
-                
-                    <a href="./searching-text.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.</b>
-                        
-                        Searching text in files
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2" data-path="removing-duplicated-lines.html">
-            
-                
-                    <a href="./removing-duplicated-lines.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.</b>
-                        
-                        Removing duplicated lines
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3" data-path="printing-range-lines.html">
-            
-                
-                    <a href="./printing-range-lines.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.</b>
-                        
-                        Printing a range of lines
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4" data-path="converting-tab-to-space.html">
-            
-                
-                    <a href="./converting-tab-to-space.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.4.</b>
-                        
-                        Converting tab to space
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5" data-path="comparing-2-text-files.html">
-            
-                
-                    <a href="./comparing-2-text-files.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.5.</b>
-                        
-                        Comparing 2 text files
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.6" data-path="sorting-lines-based-on-a-certain-field.html">
-            
-                
-                    <a href="./sorting-lines-based-on-a-certain-field.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.6.</b>
-                        
-                        Sorting lines based on a certain field
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.7" data-path="merging-content-of-2-files-side-by-side.html">
-            
-                
-                    <a href="./merging-content-of-2-files-side-by-side.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.7.</b>
-                        
-                        Merging content of 2 files side by side
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.8" data-path="joining-all-lines-in-a-file.html">
-            
-                
-                    <a href="./joining-all-lines-in-a-file.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.8.</b>
-                        
-                        Joining all lines in a file
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.9" data-path="adding-text-to-the-beginning-of-a-file.html">
-            
-                
-                    <a href="./adding-text-to-the-beginning-of-a-file.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.9.</b>
-                        
-                        Adding text to the beginning of a file
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.10" data-path="replacing-strings.html">
-            
-                
-                    <a href="./replacing-strings.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.10.</b>
-                        
-                        Replacing strings
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.11" data-path="changing-case.html">
-            
-                
-                    <a href="./changing-case.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.11.</b>
-                        
-                        Changing case
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.12" data-path="deleting-lines-that-contain-a-specific-string.html">
-            
-                
-                    <a href="./deleting-lines-that-contain-a-specific-string.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.12.</b>
-                        
-                        Deleting lines that contain a specific string
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.13" data-path="converting-newline-formatting-from-dos-to-unix-and-vice-versa.html">
-            
-                
-                    <a href="./converting-newline-formatting-from-dos-to-unix-and-vice-versa.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.13.</b>
-                        
-                        Converting newline formatting from DOS to Unix and vice versa
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="finding-things.html">
-            
-                
-                    <a href="./finding-things.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        Finding things
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1" data-path="finding-files-based-on-name.html">
-            
-                
-                    <a href="./finding-files-based-on-name.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.1.</b>
-                        
-                        Finding files based on name
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.2" data-path="finding-files-based-on-size.html">
-            
-                
-                    <a href="./finding-files-based-on-size.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.2.</b>
-                        
-                        Finding files based on size
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3" data-path="finding-files-in-a-folder.html">
-            
-                
-                    <a href="./finding-files-in-a-folder.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.3.</b>
-                        
-                        Finding files in a folder
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="4.4" data-path="counting-the-number-of-files-or-folders.html">
-            
-                
-                    <a href="./counting-the-number-of-files-or-folders.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.4.</b>
-                        
-                        Counting the number of files or folders
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="administration.html">
-            
-                
-                    <a href="./administration.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        Administration
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1" data-path="shutting-down.html">
-            
-                
-                    <a href="./shutting-down.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.1.</b>
-                        
-                        Shutting down
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2" data-path="execute-a-command-at-a-specified-time.html">
-            
-                
-                    <a href="./execute-a-command-at-a-specified-time.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.2.</b>
-                        
-                        Execute a command at a specified time
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3" data-path="pausing-execution.html">
-            
-                
-                    <a href="./pausing-execution.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.3.</b>
-                        
-                        Pausing execution
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="miscellaneous.html">
-            
-                
-                    <a href="./miscellaneous.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        Miscellaneous
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1" data-path="doing-mathematics.html">
-            
-                
-                    <a href="./doing-mathematics.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.1.</b>
-                        
-                        Doing mathematics
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-
-            
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Published with GitBook
-                </a>
-            </li>
-            
-        </ul>
-    </nav>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
 </div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="the-shell.html">
+            
+                <a href="the-shell.html">
+            
+                    
+                    The shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="running-a-list-of-commands.html">
+            
+                <a href="running-a-list-of-commands.html">
+            
+                    
+                    Running a list of commands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="converting-date-and-time.html">
+            
+                <a href="converting-date-and-time.html">
+            
+                    
+                    Converting date and time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="simulating-user-inputs.html">
+            
+                <a href="simulating-user-inputs.html">
+            
+                    
+                    Simulating user inputs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="running-a-command-for-each-item-in-a-list.html">
+            
+                <a href="running-a-command-for-each-item-in-a-list.html">
+            
+                    
+                    Running a command for each item in a list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="generating-random-numbers.html">
+            
+                <a href="generating-random-numbers.html">
+            
+                    
+                    Generating random numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="managing-files-and-directories.html">
+            
+                <a href="managing-files-and-directories.html">
+            
+                    
+                    Managing files and directories
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="watching-dir.html">
+            
+                <a href="watching-dir.html">
+            
+                    
+                    Watching directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="listing-file-and-folder-sizes.html">
+            
+                <a href="listing-file-and-folder-sizes.html">
+            
+                    
+                    Listing file and folder sizes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="generating-file-with-particular-size.html">
+            
+                <a href="generating-file-with-particular-size.html">
+            
+                    
+                    Generating random file with particular size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="printing-a-file-in-text-or-hex.html">
+            
+                <a href="printing-a-file-in-text-or-hex.html">
+            
+                    
+                    Printing a file in text or hex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="splitting-and-merging-files.html">
+            
+                <a href="splitting-and-merging-files.html">
+            
+                    
+                    Splitting and merging files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="converting-files-to-different-format.html">
+            
+                <a href="converting-files-to-different-format.html">
+            
+                    
+                    Converting files to different format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="generating-checksum.html">
+            
+                <a href="generating-checksum.html">
+            
+                    
+                    Generating checksum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="generating-mime.html">
+            
+                <a href="generating-mime.html">
+            
+                    
+                    Generating mime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="counting-number-of-lines-or-characters.html">
+            
+                <a href="counting-number-of-lines-or-characters.html">
+            
+                    
+                    Counting number of lines or characters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="copying-and-showing-progress.html">
+            
+                <a href="copying-and-showing-progress.html">
+            
+                    
+                    Copying and showing progress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="batch-renaming.html">
+            
+                <a href="batch-renaming.html">
+            
+                    
+                    Batch renaming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="counting-word-frequency.html">
+            
+                <a href="counting-word-frequency.html">
+            
+                    
+                    Counting word frequency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="comparing-2-folders.html">
+            
+                <a href="comparing-2-folders.html">
+            
+                    
+                    Comparing 2 folders
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="strings-and-text.html">
+            
+                <a href="strings-and-text.html">
+            
+                    
+                    Strings and text
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="searching-text.html">
+            
+                <a href="searching-text.html">
+            
+                    
+                    Searching text in files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="removing-duplicated-lines.html">
+            
+                <a href="removing-duplicated-lines.html">
+            
+                    
+                    Removing duplicated lines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="printing-range-lines.html">
+            
+                <a href="printing-range-lines.html">
+            
+                    
+                    Printing a range of lines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="converting-tab-to-space.html">
+            
+                <a href="converting-tab-to-space.html">
+            
+                    
+                    Converting tab to space
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="comparing-2-text-files.html">
+            
+                <a href="comparing-2-text-files.html">
+            
+                    
+                    Comparing 2 text files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="sorting-lines-based-on-a-certain-field.html">
+            
+                <a href="sorting-lines-based-on-a-certain-field.html">
+            
+                    
+                    Sorting lines based on a certain field
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="merging-content-of-2-files-side-by-side.html">
+            
+                <a href="merging-content-of-2-files-side-by-side.html">
+            
+                    
+                    Merging content of 2 files side by side
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="joining-all-lines-in-a-file.html">
+            
+                <a href="joining-all-lines-in-a-file.html">
+            
+                    
+                    Joining all lines in a file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="adding-text-to-the-beginning-of-a-file.html">
+            
+                <a href="adding-text-to-the-beginning-of-a-file.html">
+            
+                    
+                    Adding text to the beginning of a file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="replacing-strings.html">
+            
+                <a href="replacing-strings.html">
+            
+                    
+                    Replacing strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="changing-case.html">
+            
+                <a href="changing-case.html">
+            
+                    
+                    Changing case
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="deleting-lines-that-contain-a-specific-string.html">
+            
+                <a href="deleting-lines-that-contain-a-specific-string.html">
+            
+                    
+                    Deleting lines that contain a specific string
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="finding-things.html">
+            
+                <a href="finding-things.html">
+            
+                    
+                    Finding things
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="finding-files-based-on-name.html">
+            
+                <a href="finding-files-based-on-name.html">
+            
+                    
+                    Finding files based on name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="finding-files-based-on-size.html">
+            
+                <a href="finding-files-based-on-size.html">
+            
+                    
+                    Finding files based on size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="finding-files-in-a-folder.html">
+            
+                <a href="finding-files-in-a-folder.html">
+            
+                    
+                    Finding files in a folder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="counting-the-number-of-files-or-folders.html">
+            
+                <a href="counting-the-number-of-files-or-folders.html">
+            
+                    
+                    Counting the number of files or folders
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="administration.html">
+            
+                <a href="administration.html">
+            
+                    
+                    Administration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="shutting-down.html">
+            
+                <a href="shutting-down.html">
+            
+                    
+                    Shutting down
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="execute-a-command-at-a-specified-time.html">
+            
+                <a href="execute-a-command-at-a-specified-time.html">
+            
+                    
+                    Execute a command at a specified time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="pausing-execution.html">
+            
+                <a href="pausing-execution.html">
+            
+                    
+                    Pausing execution
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="miscellaneous.html">
+            
+                <a href="miscellaneous.html">
+            
+                    
+                    Miscellaneous
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="doing-mathematics.html">
+            
+                <a href="doing-mathematics.html">
+            
+                    
+                    Doing mathematics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
 
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
-    
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
+        
+            <div class="body-inner">
+                
+                    
 
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
+<div class="book-header" role="navigation">
     
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">
-                    Share on Twitter
-                </button>
-                <button type="button" data-sharing="google-plus" class="button">
-                    Share on Google
-                </button>
-                <button type="button" data-sharing="facebook" class="button">
-                    Share on Facebook
-                </button>
-                <button type="button" data-sharing="weibo" class="button">
-                    Share on Weibo
-                </button>
-                <button type="button" data-sharing="instapaper" class="button">
-                    Share on Instapaper
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-    
-    
-    
-
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >CLI cookbook</a>
+        <a href="." >Searching text in files</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="searching-text-from-files">Searching text from files</h1>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="searching-text-from-files">Searching text from files</h1>
 <h2 id="problem">Problem</h2>
 <p>You want to search for text in a lot of files swiftly.</p>
 <h2 id="solution">Solution</h2>
@@ -928,34 +780,82 @@
     ack -Q --smart-case &quot;test&quot; --js --ignore-file=match:/packed.*\.js/ \
     --ignore-file=is:Code/tag --ignore-dir=build --js &quot;test&quot;
 </code></pre>
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="./strings-and-text.html" class="navigation navigation-prev " aria-label="Previous page: Strings and text"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="./removing-duplicated-lines.html" class="navigation navigation-next " aria-label="Next page: Removing duplicated lines"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
-        
-<script src="gitbook/app.js"></script>
+                        </div>
+                    </div>
+                
+            </div>
 
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+            
+                
+                <a href="strings-and-text.html" class="navigation navigation-prev " aria-label="Previous page: Strings and text">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="removing-duplicated-lines.html" class="navigation navigation-next " aria-label="Next page: Removing duplicated lines">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Searching text in files","level":"1.4.1","depth":2,"next":{"title":"Removing duplicated lines","level":"1.4.2","depth":2,"path":"removing-duplicated-lines.md","ref":"removing-duplicated-lines.md","articles":[]},"previous":{"title":"Strings and text","level":"1.4","depth":1,"path":"strings-and-text.md","ref":"strings-and-text.md","articles":[{"title":"Searching text in files","level":"1.4.1","depth":2,"path":"searching-text.md","ref":"searching-text.md","articles":[]},{"title":"Removing duplicated lines","level":"1.4.2","depth":2,"path":"removing-duplicated-lines.md","ref":"removing-duplicated-lines.md","articles":[]},{"title":"Printing a range of lines","level":"1.4.3","depth":2,"path":"printing-range-lines.md","ref":"printing-range-lines.md","articles":[]},{"title":"Converting tab to space","level":"1.4.4","depth":2,"path":"converting-tab-to-space.md","ref":"converting-tab-to-space.md","articles":[]},{"title":"Comparing 2 text files","level":"1.4.5","depth":2,"path":"comparing-2-text-files.md","ref":"comparing-2-text-files.md","articles":[]},{"title":"Sorting lines based on a certain field","level":"1.4.6","depth":2,"path":"sorting-lines-based-on-a-certain-field.md","ref":"sorting-lines-based-on-a-certain-field.md","articles":[]},{"title":"Merging content of 2 files side by side","level":"1.4.7","depth":2,"path":"merging-content-of-2-files-side-by-side.md","ref":"merging-content-of-2-files-side-by-side.md","articles":[]},{"title":"Joining all lines in a file","level":"1.4.8","depth":2,"path":"joining-all-lines-in-a-file.md","ref":"joining-all-lines-in-a-file.md","articles":[]},{"title":"Adding text to the beginning of a file","level":"1.4.9","depth":2,"path":"adding-text-to-the-beginning-of-a-file.md","ref":"adding-text-to-the-beginning-of-a-file.md","articles":[]},{"title":"Replacing strings","level":"1.4.10","depth":2,"path":"replacing-strings.md","ref":"replacing-strings.md","articles":[]},{"title":"Changing case","level":"1.4.11","depth":2,"path":"changing-case.md","ref":"changing-case.md","articles":[]},{"title":"Deleting lines that contain a specific string","level":"1.4.12","depth":2,"path":"deleting-lines-that-contain-a-specific-string.md","ref":"deleting-lines-that-contain-a-specific-string.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"blobUrl":"https://github.com/minhhh/cli-cookbook/blob/master/"},"title":"CLI cookbook","language":"en","gitbook":">=2.0.0","description":"A cookbook for using command line tools to do everyday job"},"file":{"path":"searching-text.md","mtime":"2016-01-09T04:51:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-15T18:36:39.697Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
 
         
-    </body>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
     
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
 </html>
+
